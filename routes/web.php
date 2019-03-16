@@ -18,7 +18,9 @@ Route::get('/', function () {
 Route::get('/newstakeholder', function () {
     return view('new_stakeholder');
 });
-
+Route::get('/causes', function () {
+    return view('doners.causes');
+});
 
 Route::get('/neworganisation', function () {
     return view('new_organisation');
