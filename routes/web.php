@@ -24,11 +24,20 @@ Route::get('/newstakeholder', function () {
     return view('new_stakeholder');
 });
 
-
-Route::get('/neworganisation', function () {
-    return view('new_organisation');
+Route::get('/volunteerhome', function () {
+    return view('volunteers.home');
 });
 
-Route::post("//insert_organisation","InsertController@/insert_organisation");
+Route::get('/neworganization', function () {
+    return view('new_organization');
+});
 
+Route::post("/insert_organization","InsertController@insert_organization");
+Route::post("/insert_stakeholder","InsertController@insert_stakeholder");
+
+
+// Routes for members
+Route::get('/membersassign', function(){
+    return view('members.assign');
+});
 
