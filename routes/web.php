@@ -27,7 +27,12 @@ Route::post("/insert_organization","InsertController@insert_organization");
 
 
 // Routes for members
-Route::get('/membersassign', function(){
+Route::get('/members/assign', function(){
     return view('members.assign');
 });
 
+Route::get('/members/add', function(){
+    return view('members.addmember');
+});
+
+Route::post('/members/add', "InsertController@insert_member");

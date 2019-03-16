@@ -23,9 +23,23 @@ class InsertController extends Controller
 
     	$data_array = array('registration_number'=>$regnumber,'o_names' =>$name ,'o_type' =>$type, 'o_addresses' =>$address, 'contact_no' =>$phone, 'file_name' =>$letter);
 
-    	$res = \App\Organization::insert($data_array);
+    	$res = \App\Organizations::insert($data_array);
 
-    	return view('new_organization');
+    	return redirect('neworganization');
+
+	}
+	function insert_member(Request $req){
+    	$name = $req->input('name');
+    	$email = $req->input('email');
+    	$phone = $req->input('phone');
+    	$dob = $req->input('dob');
+    	$type = "member";
+    	$address = $req->input('address');
+    	$data_array = array('s_names' =>$name ,'types' =>$type, 'addresses' =>$address, 'contact_nos' =>$phone, 'emails'=>$email, 'dobs'=>$dob);
+
+    	$res = \App\Stakeholders::insert($data_array);
+
+    	return redirect('members/add');
 
     }
 
