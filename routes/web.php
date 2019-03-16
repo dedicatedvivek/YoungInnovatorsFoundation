@@ -11,6 +11,17 @@
 |
 */
 
+<<<<<<< HEAD
+=======
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/memberhome', function () {
+    return view('members.homenew');
+});
+
+>>>>>>> 0708ccd704e4ba1c8d535a039643da1bd3a4d105
 
 Route::get('/newstakeholder', function () {
     return view('new_stakeholder');

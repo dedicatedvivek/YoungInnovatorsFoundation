@@ -19,6 +19,25 @@
 
 }
 
+
+.tab
+{
+  overflow-y:scroll;
+  max-height: 20%;
+
+}
+
+
+
+#two{
+  display: none;
+}
+
+#three{
+  display: none;
+}
+
+
 table tr th{
   border:2px solid black;
   color: white;
@@ -86,6 +105,13 @@ table tr td{
       </div>
     </div>
 
+<button id="myBtn">Open Modal</button>
+
+
+
+
+
+
   <?php
 
   $select_query= App\Organizations::select('registration_numbers','o_names','o_types','o_addresses','contact_nos')->get();
@@ -106,7 +132,7 @@ $count_volunteer = count($volunteer_query);
   <h2 style="margin-top:80px;"><i> Associated Organizations </i></h2>
   <div class="table-container">
     
-
+  <div class="tab">
       <table class="w3-table-all" id="org-disp-table">
         <thead>
           <tr class="w3-grey headtext">
@@ -172,8 +198,13 @@ $count_volunteer = count($volunteer_query);
 
 </table>
 </div>
+</div>
+</div>
+<br>
+<br>
+<div class="table-container" id="two">
 <h2><i> Our Donors </i> </h2>
-<div class="table-container">
+<div class="tab">
   <table class="w3-table-all" id="org-disp-table">
         <thead>
           <tr class="w3-grey">
@@ -241,10 +272,12 @@ $count_volunteer = count($volunteer_query);
   
 </table>
 </div>
+</div>
+<div class="table-container" id="three">
 <h2><i> Our Volunteers </i> </h2>
- <div class="table-container">
+ 
     
-
+<div class="tab">
       <table class="w3-table-all" id="org-disp-table">
         <thead>
           <tr class="w3-grey">
@@ -323,6 +356,35 @@ $count_volunteer = count($volunteer_query);
 
 </table>
 </div>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
 
       
         
