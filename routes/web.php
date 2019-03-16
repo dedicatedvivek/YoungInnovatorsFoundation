@@ -19,11 +19,12 @@ Route::get('/newstakeholder', function () {
     return view('new_stakeholder');
 });
 
-Route::get('/neworganisation', function () {
-    return view('new_organisation');
+Route::get('/neworganization', function () {
+    return view('new_organization');
 });
 
 Route::post("/insert_organization","InsertController@insert_organization");
+Route::post("/insert_stakeholder","InsertController@insert_stakeholder");
 
 
 // Routes for members

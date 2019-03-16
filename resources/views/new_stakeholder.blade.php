@@ -40,7 +40,9 @@
 
 	<div class="container-contact100">
 		<div class="wrap-contact100">
-			<form class="contact100-form validate-form">
+			<form class="contact100-form validate-form" method="POST" action='/insert_stakeholder'>
+				{{csrf_field()}}
+
 				<span class="contact100-form-title">
 					StakeHolder's Registration Page
 				</span>
@@ -69,10 +71,10 @@
 				<div class="wrap-input100 input100-select bg1">
 					<span class="label-input100">TYPE *</span>
 					<div>
-						<select class="js-select2" name="service">
+						<select class="js-select2" name="job">
 							<option>Please chooses</option>
-							<option>DONOR</option>
-							<option>VOLUNTEER</option>
+							<option value="donor">DONOR</option>
+							<option value="volunteer">VOLUNTEER</option>
 						</select>
 						<div class="dropDownSelect2"></div>
 					</div>
@@ -83,14 +85,14 @@
 						<span class="label-input100">In which type of volunteering are you interested?</span>
 
 						<div class="contact100-form-radio m-t-15">
-							<input class="input-radio100" id="radio1" type="radio" name="type-product" value="physical" checked="checked">
+							<input class="input-radio100" id="radio1" type="radio" name="type-volunteer" value="teaching">
 							<label class="label-radio100" for="radio1">
 								Teaching 
 							</label>
 						</div>
 
 						<div class="contact100-form-radio">
-							<input class="input-radio100" id="radio2" type="radio" name="type-product" value="digital">
+							<input class="input-radio100" id="radio2" type="radio" name="type-volunteer" value="non-teaching">
 							<label class="label-radio100" for="radio2">
 								Non-Teaching
 							</label>
@@ -98,9 +100,9 @@
 					</div>
 				</div>
 
-				<div class="wrap-input100 validate-input bg0 rs1-alert-validate" data-validate = "Please Type Your Message">
+				<div class="wrap-input100 validate-input bg0 rs1-alert-validate" data-validate = "Please enter your address">
 					<span class="label-input100">Address *</span>
-					<textarea class="input100" name="message" placeholder="Enter your Address"></textarea>
+					<textarea class="input100" name="address" placeholder="Enter your Address"></textarea>
 				</div>
 
 				<div class="container-contact100-form-btn">
@@ -136,7 +138,7 @@
 
 			$(".js-select2").each(function(){
 				$(this).on('select2:close', function (e){
-					if(($(this).val() == "Please chooses") || ($(this).val() == "DONOR")) {
+					if(($(this).val() == "Please chooses") || ($(this).val() == "donor")) {
 						$('.js-show-service').slideUp();
 					}
 					else {
