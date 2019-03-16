@@ -69,15 +69,17 @@
 
 				<div class="wrap-input100 input100-select bg1">
 					<span class="label-input100">Type</span>
-					<div>
-						<select class="js-select2 sttype" name="stakeholder_type">
+					<div id="enterdiv">
+						<select class="js-select2 sttype" name="stakeholder_type" onkeyup= "appenddiv()">
 							<option>Donor</option>
 							<option>Volunteer</option>
 
 							
 							
 						</select>
-						<p id="p1"></p>
+						<select id="sub-type" name="sub-type">
+							<option value="Teaching"></option>
+							<option value="Non-Teaching"></option>
 						
 					</div>
 				</div>
@@ -179,9 +181,32 @@
 <script type="text/javascript">
 	function appenddiv(){
 	var type = document.getElementsByClassName("sttype");
+	var type_val = type.val();
 
-	if (type == 'Volunteer') {
-		var para = document.createElement("p");
+	if (type_val == 'Volunteer') {
+		var selectsub = document.createElement("select");
+		alert(selectsub);
+		selectsub.id = "subselect";
+		selectsub.name= "subtype";
+
+		var array = ["Teaching","Non-Teaching"];
+
+		for (var i = 0; i < 2; i++) {
+    var option = document.createElement("option");
+    option.value = array[i];
+    option.text = array[i];
+    selectsub.appendChild(option);
+}
+	var enterdiv = document.getElementById('enterdiv');
+
+	var elemafter = document.getElementById('p1');
+
+	enterdiv.insertBefore(selectsub,elemafter);
+
+
+
+
+
 	}
 
 }
