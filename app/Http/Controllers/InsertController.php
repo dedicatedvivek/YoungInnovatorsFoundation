@@ -19,9 +19,30 @@ class InsertController extends Controller
     	$phone = $req->input('phone');
     	$type = $req->input('type');
     	$address = $req->input('address');
-    	$letter = $req->input('letter');
 
-    	$data_array = array('registration_numbers'=>$regnumber,'o_names' =>$name ,'o_types' =>$type, 'o_addresses' =>$address, 'contact_nos' =>$phone, 'file_names' =>$letter);
+    	if ($req->hasFile('filer')) {
+
+
+    	 $letter = $req->file('filer')->store('pics','public');
+    	}  	
+
+    	// $letter = $req;
+    	echo "$letter";
+
+    	// if ($req->has('filer')) {
+    	// 	$req->file('filer')->store('pics','public');
+    	// }
+    	
+
+    	// echo $letter;
+  //   	if ($req->file('filer') == null) {
+  //  			$file = "";
+		// }else{
+  //  			$file = $req->file('filer')->store('images');  
+		// }
+    	 // $path = $req->file('letter')->store('images');
+
+    	$data_array = array('registration_numbers'=>$regnumber,'o_names' =>$name ,'o_types' =>$type, 'o_addresses' =>$address, 'contact_nos' =>$phone, 'file_names' =>(string) $letter);
 
     	$res = \App\Organizations::insert($data_array);
 
