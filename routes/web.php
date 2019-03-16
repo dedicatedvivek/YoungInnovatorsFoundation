@@ -25,3 +25,9 @@ Route::get('/neworganisation', function () {
 
 Route::post("//insert_organisation","InsertController@/insert_organisation");
 
+
+// Routes for members
+Route::get('/members', function(){
+    return view('members.home');
+});
+

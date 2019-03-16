@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 16, 2019 at 01:24 PM
--- Server version: 10.1.34-MariaDB
--- PHP Version: 7.2.7
+-- Generation Time: Mar 16, 2019 at 02:10 PM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 7.3.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -79,7 +79,8 @@ CREATE TABLE `organizations` (
   `o_types` varchar(20) NOT NULL,
   `o_addresses` varchar(100) NOT NULL,
   `contact_nos` bigint(10) NOT NULL,
-  `file_names` varchar(100) NOT NULL
+  `file_names` varchar(100) NOT NULL,
+  `v_ids` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -199,6 +200,13 @@ ALTER TABLE `donations`
   ADD KEY `donor_id` (`donor_ids`);
 
 --
+-- Indexes for table `organizations`
+--
+ALTER TABLE `organizations`
+  ADD PRIMARY KEY (`registration_numbers`),
+  ADD KEY `v_ids` (`v_ids`);
+
+--
 -- Indexes for table `stakeholders`
 --
 ALTER TABLE `stakeholders`
@@ -266,6 +274,12 @@ ALTER TABLE `attendances`
 --
 ALTER TABLE `donations`
   ADD CONSTRAINT `donations_ibfk_1` FOREIGN KEY (`donor_ids`) REFERENCES `stakeholders` (`s_ids`);
+
+--
+-- Constraints for table `organizations`
+--
+ALTER TABLE `organizations`
+  ADD CONSTRAINT `organizations_ibfk_1` FOREIGN KEY (`v_ids`) REFERENCES `stakeholders` (`s_ids`);
 
 --
 -- Constraints for table `student_attendances`
