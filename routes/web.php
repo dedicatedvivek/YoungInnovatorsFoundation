@@ -19,3 +19,11 @@ Route::get('/newstakeholder', function () {
     return view('new_stakeholder');
 });
 
+
+Route::get('/neworganisation', function () {
+    return view('new_organisation');
+});
+
+Route::post("//insert_organisation","InsertController@/insert_organisation");
+
+
