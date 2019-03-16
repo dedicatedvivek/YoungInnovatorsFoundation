@@ -103,11 +103,6 @@ use App\Stakeholders;
     </body>
 </html>
 
-<?php
 
-$select = Stakeholders::select('s_name');
-$select_val = $select[0];
 
-echo "<script>alert($select_val);</script>";
 
-?>
