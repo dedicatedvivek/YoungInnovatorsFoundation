@@ -19,6 +19,10 @@ Route::get('/newstakeholder', function () {
     return view('new_stakeholder');
 });
 
+Route::get('/volunteerhome', function () {
+    return view('volunteers.home');
+});
+
 Route::get('/neworganization', function () {
     return view('new_organization');
 });
