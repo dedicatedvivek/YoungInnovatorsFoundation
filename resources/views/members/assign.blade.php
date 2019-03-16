@@ -37,46 +37,73 @@
 </head>
 <body>
 
-
+<div class="row container-contact100">
+	<div class="col-sm-6">
 	<div class="container-contact100">
 		<div class="wrap-contact100">
-			<form class="contact100-form validate-form" action="/insert_organisation">
-				<span class="contact100-form-title">
-					Assign Volunteer
-				</span>
-
-				<div class="wrap-input100 input100-select bg1">
-					<span class="label-input100">Select Organization *</span>
-					<div>
-						<select class="js-select2" name="organization">
-							<option>DONOR</option>
-							<option>VOLUNTEER</option>
-						</select>
-						<div class="dropDownSelect2"></div>
-					</div>
-				</div>
-				<div class="wrap-input100 input100-select bg1">
-					<span class="label-input100">Select Volunteer *</span>
-					<div>
-						<select class="js-select2" name="volunteer">
-							<!-- <option>Please chooses</option> -->
-							<option>DONOR</option>
-							<option>VOLUNTEER</option>
-						</select>
-						<div class="dropDownSelect2"></div>
-					</div>
-				</div>
-				<div class="container-contact100-form-btn">
-					<button class="contact100-form-btn">
-						<span>
-							Submit
-							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
-						</span>
-					</button>
-				</div>
-			</form>
+			<span class="contact100-form-title">
+				Assigned Volunteer
+			</span>
+			<div class="wrap-input100 input100-select bg1" id="volunteer-name">
+				
+			</div>
 		</div>
 	</div>
+	</div>
+	<div class="col-sm-6">
+		<div class="container-contact100">
+			<div class="wrap-contact100">
+				<form class="contact100-form validate-form" action="/members/assign" method="POST">
+					{{csrf_field()}}
+					<span class="contact100-form-title">
+						Assign Volunteer
+					</span>
+					<div class="wrap-input100 input100-select bg1">
+						<span class="label-input100">Select Organization *</span>
+						<div>
+							<select class="js-select2" name="o_ids" id="o_ids">
+								<option disabled>Select</option>
+								<?php
+									for ($i=0; $i < count($organization); $i++) { 
+								?>
+									<option vlaue="{{$organization[$i]['registration_numbers']}}">{{$organization[$i]['o_names']}}-{{$organization[$i]['registration_numbers']}}</option>
+								<?php
+									}
+								?>
+							</select>							
+							<div class="dropDownSelect2"></div>
+						</div>
+					</div>
+					<div class="wrap-input100 input100-select bg1">
+						<span class="label-input100">Select Volunteer *</span>
+						<div>
+							<select class="js-select2" name="v_ids">
+								<option disabled>Select</option>
+								<?php
+									for ($i=0; $i < count($volunteer); $i++) { 
+								?>
+									<option vlaue="{{$volunteer[$i]['s_ids']}}">{{$volunteer[$i]['s_names']}}-{{$volunteer[$i]['s_ids']}}</option>
+								<?php
+									}
+								?>
+							</select>							
+							<div class="dropDownSelect2"></div>
+						</div>
+					</div>
+					<div class="container-contact100-form-btn">
+						<button class="contact100-form-btn">
+							<span>
+								Submit
+								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+							</span>
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+</div>
 
 
 
@@ -117,10 +144,32 @@
 	    ];
 
 	    filterBar.noUiSlider.on('update', function( values, handle ) {
-	        skipValues[handle].innerHTML = Math.round(values[handle]);
+			skipValues[handle].innerHTML = Math.round(values[handle]);
+			
 	        $('.contact100-form-range-value input[name="from-value"]').val($('#value-lower').html());
 	        $('.contact100-form-range-value input[name="to-value"]').val($('#value-upper').html());
 	    });
+	</script>
+	<script>
+		document.getElementById('o_ids').onchange = function(){
+			$.ajax({
+				type: 'GET', 
+				url: "/members/fetch_ovrelations",
+				data: {"id":this.value},
+				success: function(results){
+					$('#volunteer-name').empty();
+					if(results.length<1){
+						$("#volunteer-name").html("<span class='label-input100'><h6> No volunteers are assigned.</h6></span>");
+					}else{
+						results.forEach(function(result){
+							$("#volunteer-name").append("<span class='label-input100'><h6> <b>Name:</b> "+result['s_names']+"</h6></span><br>");
+						})
+					}
+					
+					// console.log(result);
+					
+			}});
+		}
 	</script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
