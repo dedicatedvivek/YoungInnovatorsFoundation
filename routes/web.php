@@ -15,11 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/new_stakeholder', function () {
+Route::get('/newstakeholder', function () {
     return view('new_stakeholder');
 });
 
-Route::get('/new_organisation', function () {
+Route::get('/neworganisation', function () {
     return view('new_organisation');
 });
 
