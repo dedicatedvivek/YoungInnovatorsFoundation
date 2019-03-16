@@ -15,8 +15,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/memberhome', function () {
+    return view('members.home');
+});
+
+
 Route::get('/newstakeholder', function () {
     return view('new_stakeholder');
+});
+
+Route::get('/volunteerhome', function () {
+    return view('volunteers.home');
 });
 
 Route::get('/neworganization', function () {
