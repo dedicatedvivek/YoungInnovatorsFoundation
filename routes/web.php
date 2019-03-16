@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('/memberhome', function () {
-    return view('members.home');
+    return view('members.homenew');
 });
 
 
