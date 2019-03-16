@@ -13,6 +13,8 @@ use DB;
 class InsertController extends Controller
 {
 	use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+	// Organization Insert
     function insert_organization(Request $req){
     	$name = $req->input('name');
     	$regnumber = $req->input('regnumber');
@@ -46,17 +48,67 @@ class InsertController extends Controller
 
     	$res = \App\Organizations::insert($data_array);
 
-    	if($res){
-    		echo "<script> alert('Data Inserted Successfully')</script>";
-    	} 
+		echo "<script>alert('Data Added Sussessfully')</script>";
 
-    	return view('new_organization');
+    	return redirect('neworganization');
 
+	}
+	/* =========================================
+	  Member Query
+	   ========================================= */
+	// Member insert
+	function insert_member(Request $req){
+    	$name = $req->input('name');
+    	$email = $req->input('email');
+    	$phone = $req->input('phone');
+    	$dob = $req->input('dob');
+    	$type = "member";
+    	$address = $req->input('address');
+    	$data_array = array('s_names' =>$name ,'types' =>$type, 'addresses' =>$address, 'contact_nos' =>$phone, 'emails'=>$email, 'dobs'=>$dob);
 
+		$res = \App\Stakeholders::insert($data_array);
+		
+		echo "bye";
+		
+    	return redirect('members/add');
+	}
+	
+	//Member select organization and volunteer volunteer
+	function select_ovrelations(){
+		$organizationData = \App\Organizations::select('registration_numbers', 'o_names')->get();
+		$volunteerData = \App\VolunteerViews::select('s_ids', 's_names')->get();
+		return view('members.assign')->with(['organization'=>$organizationData,'volunteer'=>$volunteerData]);
+	}
+	
+	// Member assigning volunteer to organization
+	function insert_ovrelations(Request $req){
+		$organization = explode('-' ,$req->input('o_ids'))[1];
+		$volunteer = explode('-', $req->input('v_ids'))[1];
+		$data = array('o_ids' => (string) $organization, 'v_ids' => (int) $volunteer);
+		$res = \App\Ovrelations::insert($data);
+		return redirect('/members/assign');
+	}
 
-    }
+	// Member fetching ovrelation
+	function fetch_ovrelations(Request $req){
+		$data = $req->all();
+		$id = explode("-" ,$data['id'])[1];
+		$res = \App\Ovrelations::select('v_ids')->where('o_ids', (string) $id)->get();
+		$idArray = [];
+		for($i=0; $i<count($res); $i++){
+			if(!in_array($res[$i]['v_ids'], $idArray)){
+				array_push($idArray, $res[$i]['v_ids']);
+			}
+		}
+		$resVolunteer = \App\VolunteerViews::select('s_names')->whereIn('s_ids', $idArray)->get();
+		return response()->json($resVolunteer, 200);
+	}
 
+	/* =======================
+		End of members query
+	       ============*/
 
+	// Stakeholder insert
     function insert_stakeholder(Request $req){
     	$name = $req->input('name');
     	$email = $req->input('email');
@@ -74,8 +126,6 @@ class InsertController extends Controller
     	}
 
     	return view('new_stakeholder');
-
-
     }
 
 }

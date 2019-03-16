@@ -15,6 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/memberhome', function () {
+    return view('members.home');
+});
+
+
 Route::get('/newstakeholder', function () {
     return view('new_stakeholder');
 });
@@ -32,7 +37,16 @@ Route::post("/insert_stakeholder","InsertController@insert_stakeholder");
 
 
 // Routes for members
-Route::get('/membersassign', function(){
-    return view('members.assign');
+
+Route::get('/members/assign', "InsertController@select_ovrelations");
+Route::post('/members/assign', "InsertController@insert_ovrelations");
+
+Route::get('/members/add', function(){
+    return view('members.addmember');
 });
 
+Route::get('/members/fetch_ovrelations', "InsertController@fetch_ovrelations");
+
+Route::post('/members/add', "InsertController@insert_member");
+
+// members routes end
