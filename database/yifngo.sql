@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 16, 2019 at 12:40 PM
+-- Generation Time: Mar 16, 2019 at 01:24 PM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.7
 
@@ -53,10 +53,18 @@ CREATE TABLE `donations` (
 -- --------------------------------------------------------
 
 --
--- Stand-in structure for view `donor_view`
+-- Stand-in structure for view `donor_views`
 -- (See below for the actual view)
 --
-CREATE TABLE `donor_view` (
+CREATE TABLE `donor_views` (
+`s_ids` int(10)
+,`s_names` varchar(100)
+,`emails` varchar(100)
+,`addresses` varchar(100)
+,`contact_nos` bigint(250)
+,`types` varchar(20)
+,`job_types` varchar(20)
+,`dobs` date
 );
 
 -- --------------------------------------------------------
@@ -116,6 +124,13 @@ CREATE TABLE `students` (
   `st_emails` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `students`
+--
+
+INSERT INTO `students` (`st_ids`, `st_names`, `st_fathernames`, `st_mothernames`, `st_father_contact_nos`, `st_mother_contact_nos`, `addresses`, `dobs`, `st_emails`) VALUES
+(1, 'dncdnNSANCN', 'C M ', 'C , ', 7891234561, 9999999999, 'cbddbh', '2019-03-06', 'cndjndjcnjcnjcjcnjcn');
+
 -- --------------------------------------------------------
 
 --
@@ -133,29 +148,37 @@ CREATE TABLE `student_attendances` (
 -- --------------------------------------------------------
 
 --
--- Stand-in structure for view `volunteer_name`
+-- Stand-in structure for view `volunteer_views`
 -- (See below for the actual view)
 --
-CREATE TABLE `volunteer_name` (
+CREATE TABLE `volunteer_views` (
+`s_ids` int(10)
+,`s_names` varchar(100)
+,`emails` varchar(100)
+,`addresses` varchar(100)
+,`contact_nos` bigint(250)
+,`types` varchar(20)
+,`job_types` varchar(20)
+,`dobs` date
 );
 
 -- --------------------------------------------------------
 
 --
--- Structure for view `donor_view`
+-- Structure for view `donor_views`
 --
-DROP TABLE IF EXISTS `donor_view`;
+DROP TABLE IF EXISTS `donor_views`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `donor_view`  AS  select `stakeholders`.`s_ids` AS `s_ids`,`stakeholders`.`s_names` AS `s_names`,`stakeholders`.`emails` AS `emails`,`stakeholders`.`addresses` AS `addresses`,`stakeholders`.`contact_no` AS `contact_no`,`stakeholders`.`types` AS `types`,`stakeholders`.`job_types` AS `job_types`,`stakeholders`.`dob` AS `dob` from `stakeholders` where (`stakeholders`.`types` = 'donors') ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `donor_views`  AS  select `stakeholders`.`s_ids` AS `s_ids`,`stakeholders`.`s_names` AS `s_names`,`stakeholders`.`emails` AS `emails`,`stakeholders`.`addresses` AS `addresses`,`stakeholders`.`contact_nos` AS `contact_nos`,`stakeholders`.`types` AS `types`,`stakeholders`.`job_types` AS `job_types`,`stakeholders`.`dobs` AS `dobs` from `stakeholders` where (`stakeholders`.`types` = 'donor') ;
 
 -- --------------------------------------------------------
 
 --
--- Structure for view `volunteer_name`
+-- Structure for view `volunteer_views`
 --
-DROP TABLE IF EXISTS `volunteer_name`;
+DROP TABLE IF EXISTS `volunteer_views`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `volunteer_name`  AS  select `stakeholders`.`s_ids` AS `s_ids`,`stakeholders`.`s_names` AS `s_names`,`stakeholders`.`emails` AS `emails`,`stakeholders`.`addresses` AS `addresses`,`stakeholders`.`contact_no` AS `contact_no`,`stakeholders`.`types` AS `types`,`stakeholders`.`job_types` AS `job_types`,`stakeholders`.`dob` AS `dob` from `stakeholders` where (`stakeholders`.`types` = 'volunteers') ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `volunteer_views`  AS  select `stakeholders`.`s_ids` AS `s_ids`,`stakeholders`.`s_names` AS `s_names`,`stakeholders`.`emails` AS `emails`,`stakeholders`.`addresses` AS `addresses`,`stakeholders`.`contact_nos` AS `contact_nos`,`stakeholders`.`types` AS `types`,`stakeholders`.`job_types` AS `job_types`,`stakeholders`.`dobs` AS `dobs` from `stakeholders` where (`stakeholders`.`types` = 'volunteer') ;
 
 --
 -- Indexes for dumped tables
@@ -220,7 +243,7 @@ ALTER TABLE `stakeholders`
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `st_ids` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `st_ids` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `student_attendances`
