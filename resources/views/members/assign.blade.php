@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>StakeHolder's Page</title>
+	<title>Organisation Register</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -28,79 +28,30 @@
 	<link rel="stylesheet" type="text/css" href="ContactFrom_v5/css/util.css">
 	<link rel="stylesheet" type="text/css" href="ContactFrom_v5/css/main.css">
 <!--===============================================================================================-->
-
-<style type="text/css">
-	#sub-type{
-		display: none;
-	}
-</style>
 </head>
 <body>
 
 
 	<div class="container-contact100">
 		<div class="wrap-contact100">
-			<form class="contact100-form validate-form">
+			<form class="contact100-form validate-form" action="/insert_organisation">
 				<span class="contact100-form-title">
-					StakeHolder's Registration Page
+					Assign Volunteer
 				</span>
 
 				<div class="wrap-input100 validate-input bg1" data-validate="Please Type Your Name">
-					<span class="label-input100">FULL NAME *</span>
-					<input class="input100" type="text" name="name" placeholder="Enter Your Name">
+					<span class="label-input100"> Select Organization *</span>
+					
+                    <select name="organization" id="organization" class="input100">
+                        <option value=""></option>
+                    </select>
 				</div>
 
-				<div class="wrap-input100 validate-input bg1" data-validate = "Enter Your Email (e@a.x)">
-					<span class="label-input100">Email *</span>
-					<input class="input100" type="text" name="email" placeholder="Enter Your Email ">
-				</div>
-
-				<div class="wrap-input100 bg1 rs1-wrap-input100">
-					<span class="label-input100">Phone *</span>
-					<input class="input100" type="text" name="phone" placeholder="Enter Number Phone">
-				</div>
-
-
-				<div class="wrap-input100 bg1 rs1-wrap-input100">
-					<span class="label-input100">Date Of Birth *</span>
-					<input class="input100" type="date" name="dob">
-				</div>
-
-				<div class="wrap-input100 input100-select bg1">
-					<span class="label-input100">TYPE *</span>
-					<div>
-						<select class="js-select2" name="service">
-							<option>Please chooses</option>
-							<option>DONOR</option>
-							<option>VOLUNTEER</option>
-						</select>
-						<div class="dropDownSelect2"></div>
-					</div>
-				</div>
-
-				<div class="w-full dis-none js-show-service">
-					<div class="wrap-contact100-form-radio">
-						<span class="label-input100">In which type of volunteering are you interested?</span>
-
-						<div class="contact100-form-radio m-t-15">
-							<input class="input-radio100" id="radio1" type="radio" name="type-product" value="physical" checked="checked">
-							<label class="label-radio100" for="radio1">
-								Teaching 
-							</label>
-						</div>
-
-						<div class="contact100-form-radio">
-							<input class="input-radio100" id="radio2" type="radio" name="type-product" value="digital">
-							<label class="label-radio100" for="radio2">
-								Non-Teaching
-							</label>
-						</div>
-					</div>
-				</div>
-
-				<div class="wrap-input100 validate-input bg0 rs1-alert-validate" data-validate = "Please Type Your Message">
-					<span class="label-input100">Address *</span>
-					<textarea class="input100" name="message" placeholder="Enter your Address"></textarea>
+				<div class="wrap-input100 validate-input bg1" data-validate="Please Type Your Registration Number">
+					<span class="label-input100"> Select Volunteers *</span>
+					<select name="voluteers" id="volunteers" class="input100">
+                        <option value=""></option>
+                    </select>
 				</div>
 
 				<div class="container-contact100-form-btn">
@@ -118,14 +69,14 @@
 
 
 <!--===============================================================================================-->
-	<script src="ContactFrom_v5/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
-	<script src="ContactFrom_v5/vendor/animsition/js/animsition.min.js"></script>
+	<script src="vendor/animsition/js/animsition.min.js"></script>
 <!--===============================================================================================-->
-	<script src="ContactFrom_v5/vendor/bootstrap/js/popper.js"></script>
-	<script src="ContactFrom_v5/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 <!--===============================================================================================-->
-	<script src="ContactFrom_v5/vendor/select2/select2.min.js"></script>
+	<script src="vendor/select2/select2.min.js"></script>
 	<script>
 		$(".js-select2").each(function(){
 			$(this).select2({
@@ -136,7 +87,7 @@
 
 			$(".js-select2").each(function(){
 				$(this).on('select2:close', function (e){
-					if(($(this).val() == "Please chooses") || ($(this).val() == "DONOR")) {
+					if($(this).val() == "Please chooses") {
 						$('.js-show-service').slideUp();
 					}
 					else {
@@ -148,12 +99,12 @@
 		})
 	</script>
 <!--===============================================================================================-->
-	<script src="ContactFrom_v5/vendor/daterangepicker/moment.min.js"></script>
-	<script src="ContactFrom_v5/vendor/daterangepicker/daterangepicker.js"></script>
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
 <!--===============================================================================================-->
-	<script src="ContactFrom_v5/vendor/countdowntime/countdowntime.js"></script>
+	<script src="vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
-	<script src="ContactFrom_v5/vendor/noui/nouislider.min.js"></script>
+	<script src="vendor/noui/nouislider.min.js"></script>
 	<script>
 	    var filterBar = document.getElementById('filter-bar');
 
@@ -192,6 +143,3 @@
 
 </body>
 </html>
-
-
-

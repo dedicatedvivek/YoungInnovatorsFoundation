@@ -15,13 +15,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/new_stakeholder', function () {
+Route::get('/newstakeholder', function () {
     return view('new_stakeholder');
 });
 
-Route::get('/new_organization', function () {
-    return view('new_organization');
+Route::get('/neworganisation', function () {
+    return view('new_organisation');
 });
 
 Route::post("/insert_organization","InsertController@insert_organization");
+
+
+// Routes for members
+Route::get('/membersassign', function(){
+    return view('members.assign');
+});
 
