@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/new_stakeholders', function () {
+    return view('welcome');
+});
