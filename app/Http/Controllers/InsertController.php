@@ -21,5 +21,12 @@ class InsertController extends Controller
     	$address = $req->input('address');
     	$letter = $req->input('letter');
 
+    	$data_array = array('registration_number'=>$regnumber,'o_names' =>$name ,'o_type' =>$type, 'o_addresses' =>$address, 'contact_no' =>$phone, 'file_name' =>$letter);
+
+    	$res = Organization::insert($data_array);
+
+    	return view('new_organisation');
+
     }
+
 }
