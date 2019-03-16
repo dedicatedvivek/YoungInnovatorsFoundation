@@ -15,3 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/new_stakeholder', function () {
+    return view('new_stakeholder');
+});
+
+Route::get('/new_organisation', function () {
+    return view('new_organisation');
+});
+
+Route::post("//insert_organisation","InsertController@/insert_organisation");
+

@@ -5,28 +5,28 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+	<link rel="icon" type="image/png" href="ContactFrom_v5/images/icons/favicon.ico"/>
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="ContactFrom_v5/vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="ContactFrom_v5/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+	<link rel="stylesheet" type="text/css" href="ContactFrom_v5/fonts/iconic/css/material-design-iconic-font.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="ContactFrom_v5/vendor/animate/animate.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="ContactFrom_v5/vendor/css-hamburgers/hamburgers.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+	<link rel="stylesheet" type="text/css" href="ContactFrom_v5/vendor/animsition/css/animsition.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="ContactFrom_v5/vendor/select2/select2.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+	<link rel="stylesheet" type="text/css" href="ContactFrom_v5/vendor/daterangepicker/daterangepicker.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/noui/nouislider.min.css">
+	<link rel="stylesheet" type="text/css" href="ContactFrom_v5/vendor/noui/nouislider.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="css/util.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="ContactFrom_v5/css/util.css">
+	<link rel="stylesheet" type="text/css" href="ContactFrom_v5/css/main.css">
 <!--===============================================================================================-->
 </head>
 <body>
@@ -34,7 +34,7 @@
 
 	<div class="container-contact100">
 		<div class="wrap-contact100">
-			<form class="contact100-form validate-form">
+			<form class="contact100-form validate-form" action="/insert_organisation">
 				<span class="contact100-form-title">
 					Organisation
 				</span>
@@ -42,6 +42,11 @@
 				<div class="wrap-input100 validate-input bg1" data-validate="Please Type Your Name">
 					<span class="label-input100"> NAME *</span>
 					<input class="input100" type="text" name="name" placeholder="Enter Organisation's Name">
+				</div>
+
+				<div class="wrap-input100 validate-input bg1" data-validate="Please Type Your Registration Number">
+					<span class="label-input100"> Registration Number *</span>
+					<input class="input100" type="text" name="regnumber" placeholder="Enter Organisation's Registration Number">
 				</div>
 
 				<div class="wrap-input100 bg1 rs1-wrap-input100">
@@ -52,18 +57,18 @@
 
 				<div class="wrap-input100 bg1 rs1-wrap-input100">
 					<span class="label-input100">Type *</span>
-					<input class="input100" type="text" name="phone" placeholder="Enter Organisation's type">
+					<input class="input100" type="text" name="type" placeholder="Enter Organisation's type">
 				</div>
 
 
 				<div class="wrap-input100 validate-input bg0 rs1-alert-validate" data-validate = "Please Type Your Address">
 					<span class="label-input100">Address *</span>
-					<textarea class="input100" name="message" placeholder="Enter Organisation's Address"></textarea>
+					<textarea class="input100" name="address" placeholder="Enter Organisation's Address"></textarea>
 				</div>
 
 				<div class="wrap-input100 validate-input bg1" data-validate="Please Type Your Name">
 					<span class="label-input100"> Letter Head *</span>
-					<input type="file" name="fileToUpload" id="fileToUpload">
+					<input type="file" name="letter" id="fileToUpload">
 				</div>
 
 				<div class="container-contact100-form-btn">
