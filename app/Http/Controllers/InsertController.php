@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Organization;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
@@ -13,7 +13,7 @@ use DB;
 class InsertController extends Controller
 {
 	use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
-    function insert_organisation(){
+    function insert_organization(Request $req){
     	$name = $req->input('name');
     	$regnumber = $req->input('regnumber');
     	$phone = $req->input('phone');
@@ -23,9 +23,9 @@ class InsertController extends Controller
 
     	$data_array = array('registration_number'=>$regnumber,'o_names' =>$name ,'o_type' =>$type, 'o_addresses' =>$address, 'contact_no' =>$phone, 'file_name' =>$letter);
 
-    	$res = Organization::insert($data_array);
+    	$res = \App\Organization::insert($data_array);
 
-    	return view('new_organisation');
+    	return view('new_organization');
 
     }
 

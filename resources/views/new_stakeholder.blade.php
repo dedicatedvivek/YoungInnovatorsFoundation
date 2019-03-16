@@ -1,8 +1,7 @@
-	<form  name="sh_reg">
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Contact V5</title>
+	<title>StakeHolder's Page</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -35,10 +34,9 @@
 
 	<div class="container-contact100">
 		<div class="wrap-contact100">
-			<form class="contact100-form validate-form" action="/insert_stakeholder" method="POST">
-				{{csrf_field()}}
+			<form class="contact100-form validate-form">
 				<span class="contact100-form-title">
-					Contact Us
+					StakeHolder's Registration Page
 				</span>
 
 				<div class="wrap-input100 validate-input bg1" data-validate="Please Type Your Name">
@@ -46,49 +44,57 @@
 					<input class="input100" type="text" name="name" placeholder="Enter Your Name">
 				</div>
 
-				<div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate = "Enter Your Email (e@a.x)">
+				<div class="wrap-input100 validate-input bg1" data-validate = "Enter Your Email (e@a.x)">
 					<span class="label-input100">Email *</span>
 					<input class="input100" type="text" name="email" placeholder="Enter Your Email ">
 				</div>
 
 				<div class="wrap-input100 bg1 rs1-wrap-input100">
-					<span class="label-input100">Phone</span>
+					<span class="label-input100">Phone *</span>
 					<input class="input100" type="text" name="phone" placeholder="Enter Number Phone">
 				</div>
 
-				<div class="wrap-input100 bg1 rs1-wrap-input100">
-					<span class="label-input100">Address</span>
-					<input class="input100" type="text" name="address" placeholder="Enter Address">
-				</div>
 
 				<div class="wrap-input100 bg1 rs1-wrap-input100">
-					<span class="label-input100">Date Of Birth</span>
+					<span class="label-input100">Date Of Birth *</span>
 					<input class="input100" type="date" name="dob">
 				</div>
 
-
 				<div class="wrap-input100 input100-select bg1">
-					<span class="label-input100">Type</span>
-					<div id="enterdiv">
-						<select class="js-select2 sttype" name="stakeholder_type" onkeyup= "appenddiv()">
-							<option>Donor</option>
-							<option>Volunteer</option>
-
-							
-							
+					<span class="label-input100">TYPE *</span>
+					<div>
+						<select class="js-select2" name="service">
+							<option>Please chooses</option>
+							<option>DONOR</option>
+							<option>VOLUNTEER</option>
 						</select>
-						<select id="sub-type" name="sub-type">
-							<option value="Teaching"></option>
-							<option value="Non-Teaching"></option>
-						
+						<div class="dropDownSelect2"></div>
 					</div>
 				</div>
 
-				
+				<div class="w-full dis-none js-show-service">
+					<div class="wrap-contact100-form-radio">
+						<span class="label-input100">In which type of volunteering are you interested?</span>
+
+						<div class="contact100-form-radio m-t-15">
+							<input class="input-radio100" id="radio1" type="radio" name="type-product" value="physical" checked="checked">
+							<label class="label-radio100" for="radio1">
+								Teaching 
+							</label>
+						</div>
+
+						<div class="contact100-form-radio">
+							<input class="input-radio100" id="radio2" type="radio" name="type-product" value="digital">
+							<label class="label-radio100" for="radio2">
+								Non-Teaching
+							</label>
+						</div>
+					</div>
+				</div>
 
 				<div class="wrap-input100 validate-input bg0 rs1-alert-validate" data-validate = "Please Type Your Message">
-					<span class="label-input100">Message</span>
-					<textarea class="input100" name="message" placeholder="Your message here..."></textarea>
+					<span class="label-input100">Address *</span>
+					<textarea class="input100" name="message" placeholder="Enter your Address"></textarea>
 				</div>
 
 				<div class="container-contact100-form-btn">
@@ -106,14 +112,14 @@
 
 
 <!--===============================================================================================-->
-	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="ContactFrom_v5/vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
-	<script src="vendor/animsition/js/animsition.min.js"></script>
+	<script src="ContactFrom_v5/vendor/animsition/js/animsition.min.js"></script>
 <!--===============================================================================================-->
-	<script src="vendor/bootstrap/js/popper.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="ContactFrom_v5/vendor/bootstrap/js/popper.js"></script>
+	<script src="ContactFrom_v5/vendor/bootstrap/js/bootstrap.min.js"></script>
 <!--===============================================================================================-->
-	<script src="vendor/select2/select2.min.js"></script>
+	<script src="ContactFrom_v5/vendor/select2/select2.min.js"></script>
 	<script>
 		$(".js-select2").each(function(){
 			$(this).select2({
@@ -124,7 +130,7 @@
 
 			$(".js-select2").each(function(){
 				$(this).on('select2:close', function (e){
-					if($(this).val() == "Please chooses") {
+					if(($(this).val() == "Please chooses") || ($(this).val() == "DONOR")) {
 						$('.js-show-service').slideUp();
 					}
 					else {
@@ -136,12 +142,12 @@
 		})
 	</script>
 <!--===============================================================================================-->
-	<script src="vendor/daterangepicker/moment.min.js"></script>
-	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+	<script src="ContactFrom_v5/vendor/daterangepicker/moment.min.js"></script>
+	<script src="ContactFrom_v5/vendor/daterangepicker/daterangepicker.js"></script>
 <!--===============================================================================================-->
-	<script src="vendor/countdowntime/countdowntime.js"></script>
+	<script src="ContactFrom_v5/vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
-	<script src="vendor/noui/nouislider.min.js"></script>
+	<script src="ContactFrom_v5/vendor/noui/nouislider.min.js"></script>
 	<script>
 	    var filterBar = document.getElementById('filter-bar');
 
@@ -176,40 +182,6 @@
   gtag('js', new Date());
 
   gtag('config', 'UA-23581568-13');
-</script>
-
-<script type="text/javascript">
-	function appenddiv(){
-	var type = document.getElementsByClassName("sttype");
-	var type_val = type.val();
-
-	if (type_val == 'Volunteer') {
-		var selectsub = document.createElement("select");
-		alert(selectsub);
-		selectsub.id = "subselect";
-		selectsub.name= "subtype";
-
-		var array = ["Teaching","Non-Teaching"];
-
-		for (var i = 0; i < 2; i++) {
-    var option = document.createElement("option");
-    option.value = array[i];
-    option.text = array[i];
-    selectsub.appendChild(option);
-}
-	var enterdiv = document.getElementById('enterdiv');
-
-	var elemafter = document.getElementById('p1');
-
-	enterdiv.insertBefore(selectsub,elemafter);
-
-
-
-
-
-	}
-
-}
 </script>
 
 </body>
