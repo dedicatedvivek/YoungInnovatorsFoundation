@@ -85,7 +85,7 @@
     					  </center>
     					  </th>
     					  <th class="databutton ">
-    					  	<button type="button" class="sub_button">Donate</button>
+    					  	<button type="button" class="sub_button" onclick="alertf()">Donate</button>
     					  </th>
    					</tr>
    					<tr>
@@ -101,8 +101,12 @@
 				</table>
 		</div>
 	</div>
-<?
- $session=		
+<script type="text/javascript">
+	function alertf(){
+		alert("donated sucessfully");
+	}
+</script>
+ 
 
 
 </body>

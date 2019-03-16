@@ -22,9 +22,16 @@ Route::get('/newstakeholder', function () {
 Route::get('/causes', function () {
     return view('doners.causes');
 });
+Route::get('/donation', function () {
+    return view('doners.donation');
+});
+Route::get('/new_donation', function () {
+    return view('doners.new_donation');
+});
 
-Route::get('/neworganisation', function () {
-    return view('new_organisation');
+Route::get('/donation', function () {
+    return view('doners.donation');
+});
 
 
 Route::get('/neworganization', function () {
@@ -32,8 +39,11 @@ Route::get('/neworganization', function () {
 
 });
 
+
+route::get('send','mailController@send');
 Route::post("/insert_organization","InsertController@insert_organization");
 Route::post("/insert_stakeholder","InsertController@insert_stakeholder");
+Route::post("/insert_donation","InsertController@insert_donation");
 
 
 // Routes for members

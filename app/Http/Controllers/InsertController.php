@@ -54,4 +54,18 @@ class InsertController extends Controller
 
     }
 
+    function insert_donation(Request $req){
+        $d_amounts = $req->input('d_amounts');
+        $d_dates = $req->input('d_dates');
+        $d_modes= $req->input('d_modes');
+        
+        $data_array_stake = array('d_amounts'=>$d_amounts,'d_dates' =>$d_dates , 'd_modes' =>$d_modes,);
+
+        $res = \App\donations::insert($data_array_stake);
+
+        return view('causes');
+
+
+    }
+
 }
