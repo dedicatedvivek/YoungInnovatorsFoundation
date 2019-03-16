@@ -29,6 +29,12 @@
 	<link rel="stylesheet" type="text/css" href="ContactFrom_v5/css/util.css">
 	<link rel="stylesheet" type="text/css" href="ContactFrom_v5/css/main.css">
 <!--===============================================================================================-->
+
+<style type="text/css">
+	#sub-type{
+		display: none;
+	}
+</style>
 </head>
 <body>
 

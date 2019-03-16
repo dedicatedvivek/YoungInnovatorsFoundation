@@ -19,6 +19,7 @@ Route::get('/newstakeholder', function () {
     return view('new_stakeholder');
 });
 
+
 Route::get('/neworganisation', function () {
     return view('new_organisation');
 });
@@ -27,7 +28,7 @@ Route::post("//insert_organisation","InsertController@/insert_organisation");
 
 
 // Routes for members
-Route::get('/members', function(){
-    return view('members.home');
+Route::get('/membersassign', function(){
+    return view('members.assign');
 });
 
