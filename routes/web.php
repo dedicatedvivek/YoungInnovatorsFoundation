@@ -49,12 +49,11 @@ Route::get('/volunteerhome', function () {
 });
 
 Route::get('/studenthome', function () {
-    return view('students.home');
+    return view('members.student');
 });
 
 Route::get('/neworganization', function () {
     return view('new_organization');
-
 });
 
 
@@ -122,6 +121,9 @@ Route::get('/contact', function () {
     return view('static.contact');
 });
 
+Route::get('/ocr', function () {
+    return view('mail');
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
