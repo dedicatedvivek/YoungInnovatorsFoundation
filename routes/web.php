@@ -63,6 +63,7 @@ Route::post("/insert_organization","InsertController@insert_organization");
 Route::post("/insert_stakeholder","InsertController@insert_stakeholder");
 Route::post("/insert_donation","InsertController@insert_donation");
 Route::post("/attachment_email","mailController@attachment_email");
+Route::post("/insert_contact","InsertController@insert_contact");
 
 
 // Routes for members

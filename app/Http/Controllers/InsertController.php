@@ -138,12 +138,25 @@ class InsertController extends Controller
         $d_dates = $req->input('d_dates');
         $d_modes= $req->input('d_modes');
         
-        $data_array_stake = array('d_amounts'=>$d_amounts,'d_dates' =>$d_dates , 'd_modes' =>$d_modes,);
+        $data_array_stake = array('d_amounts'=>$d_amounts,'d_dates' =>$d_dates , 'd_modes' =>$d_modes);
 
         $res = \App\donations::insert($data_array_stake);
 
         return view('causes');
 
+
+    }
+
+    //Contact insert
+    function insert_contact(Request $req){
+        $c_name = $req->input('name');
+        $c_email = $req->input('email');
+        $c_subject= $req->input('subject');
+        $c_message = $req->input('message');
+
+        $data_array_contact = array('name'=>$c_name, 'email'=>$c_email, 'subject'=>$c_subject, 'message'=>$c_message);
+        $res = \App\Contacts::insert($data_array_contact);
+        
 
     }
 
