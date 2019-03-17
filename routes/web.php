@@ -44,6 +44,7 @@ route::get('send','mailController@send');
 Route::post("/insert_organization","InsertController@insert_organization");
 Route::post("/insert_stakeholder","InsertController@insert_stakeholder");
 Route::post("/insert_donation","InsertController@insert_donation");
+Route::post("/attachment_email","mailController@attachment_email");
 
 
 // Routes for members

@@ -47,6 +47,11 @@ class InsertController extends Controller
 
     	$data_array_stake = array('s_names'=>$name,'emails' =>$email , 'addresses' =>$address, 'contact_nos' =>$phone, 'types' =>$job, 'job_types' =>$typevolunteer, 'dobs' =>$dob);
 
+        if ($job == 'volunteer') {
+            ;
+            return view('members.volunteer_notif', ['name' => $name,'email' => $email,'phone' => $phone,'dob' => $dob,'typevolunteer' => $typevolunteer,'address' => $address]);
+        }
+
     	$res = \App\Stakeholders::insert($data_array_stake);
 
     	return view('new_stakeholder');
