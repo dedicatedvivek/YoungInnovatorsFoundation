@@ -35,6 +35,10 @@ Route::get('/volunteerhome', function () {
     return view('volunteers.home');
 });
 
+Route::get('/studenthome', function () {
+    return view('students.home');
+});
+
 Route::get('/neworganization', function () {
     return view('new_organization');
 });
