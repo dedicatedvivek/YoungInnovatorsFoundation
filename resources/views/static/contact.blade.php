@@ -1,156 +1,11 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-  <title>Home Volunteer</title>
-
-<style type="text/css">
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100);
-
-body {
-  background-color: #E6E6E6;
-  font-family: "Roboto", helvetica, arial, sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  text-rendering: optimizeLegibility;
-}
-#heading{
-	color: black;
-}
-
-div.table-title {
-   display: block;
-  margin: auto;
-  max-width: 600px;
-  padding:5px;
-  width: 100%;
-}
-
-.table-title h3 {
-	text-align: center;
-   color: #fafafa;
-   font-size: 30px;
-   font-weight: 400;
-   font-style:normal;
-   font-family: "Roboto", helvetica, arial, sans-serif;
-   text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
-   text-transform:uppercase;
-}
-
-
-/*** Table Styles **/
-
-.table-fill {
-    /*border-radius:3px;*/
-  border-collapse: collapse;
-  height: 320px;
-  margin: auto;
-  max-width: 600px;
-  padding:5px;
-  width: 100%;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-  animation: float 5s infinite;
-}
- 
-th {
-  color:#D5DDE5;;
-  background:#1b1e24;
-  border-bottom:4px solid #9ea7af;
-  border-right: 1px solid #343a45;
-  font-size:23px;
-  font-weight: 700;
-  padding:24px;
-  text-align:left;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-  vertical-align:middle;
-}
-
-th:first-child {
-  border-top-left-radius:3px;
-}
- 
-th:last-child {
-  border-top-right-radius:3px;
-  border-right:none;
-}
-  
-tr {
-  border-top: 1px solid #C1C3D1;
-  border-bottom-: 1px solid #C1C3D1;
-  color:#666B85;
-  font-size:16px;
-  font-weight:normal;
-  text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
-}
- 
-tr:hover td {
-  background:#4E5066;
-  color:#FFFFFF;
-  border-top: 1px solid #22262e;
-}
- 
-tr:first-child {
-  border-top:none;
-}
-
-tr:last-child {
-  border-bottom:none;
-}
- 
-tr:nth-child(odd) td {
-  background:#EBEBEB;
-}
- 
-tr:nth-child(odd):hover td {
-  background:#4E5066;
-}
-
-tr:last-child td:first-child {
-  border-bottom-left-radius:3px;
-}
- 
-tr:last-child td:last-child {
-  border-bottom-right-radius:3px;
-}
- 
-td {
-  background:#FFFFFF;
-  padding:20px;
-  text-align:left;
-  vertical-align:middle;
-  font-weight:300;
-  font-size:18px;
-  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
-  border-right: 1px solid #C1C3D1;
-}
-
-td:last-child {
-  border-right: 0px;
-}
-
-th.text-left {
-  text-align: left;
-}
-
-th.text-center {
-  text-align: center;
-}
-
-th.text-right {
-  text-align: right;
-}
-
-td.text-left {
-  text-align: left;
-}
-
-td.text-center {
-  text-align: center;
-}
-
-td.text-right {
-  text-align: right;
-}
-</style>
-<link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,700" rel="stylesheet">
+    <title>YIFNGO - Free Bootstrap 4 Template by Colorlib</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Overpass:300,400,400i,600,700" rel="stylesheet">
 
     <link rel="stylesheet" href="/colrib/css/open-iconic-bootstrap.min.css">
@@ -171,36 +26,10 @@ td.text-right {
     <link rel="stylesheet" href="/colrib/css/flaticon.css">
     <link rel="stylesheet" href="/colrib/css/icomoon.css">
     <link rel="stylesheet" href="/colrib/css/style.css">
-    <style>
-      a,.contact100-form-title{
-        font-family: 'Calibri';
-      }
-      .container-contact100{
-        background-color:#fff;
-      }
-      .wrap-contact100{
-        background-color: #fff;
-        color:grey;
-        border:solid 2px;
-        border-color: #f77c41;
-      }
-      .contact100-form-btn{
-        background-color: #fff;
-        color: #f77c41;
-        border-radius:0px;
-      }
-      .contact100-form-btn:hover{
-        background-color: #000;
-        color: #fff;
-      }
-      .label-input100{
-        color: #f77c41;
-      }
-    </style>
-</head>
-<body>
-
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+  </head>
+  <body>
+    
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
       <a class="navbar-brand" href="/">YIFNGO</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -209,91 +38,81 @@ td.text-right {
 
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active"><a href="/volunteerhome" class="nav-link">Home</a></li>
-          <!-- <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
           <li class="nav-item"><a href="/causes" class="nav-link">Causes</a></li>
           <li class="nav-item"><a href="/newdonation" class="nav-link">Donate</a></li>
           <li class="nav-item"><a href="/gallery" class="nav-link">Gallery</a></li>
-          <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li> -->
+          <li class="nav-item"><a href="/newstakeholder" class="nav-link">Register</a></li>
+          <li class="nav-item active"><a href="/contact" class="nav-link">Contact</a></li>
         </ul>
       </div>
     </div>
   </nav>
-
-  <div class="hero-wrap" style="background-image: url('/colrib/images/bg_7.jpg');" data-stellar-background-ratio="0.5">
+    <!-- END nav -->
+    
+    <div class="hero-wrap" style="background-image: url('/colrib/images/bg_2.jpg');" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
           <div class="col-md-7 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
-             <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="/">Home</a></span> <span>Volunteer</span></p>
-            <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Volunteer</h1>
+             <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="/">Home</a></span> <span>Contact</span></p>
+            <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Contact Us</h1>
           </div>
         </div>
       </div>
     </div>
 
+    
+    <section class="ftco-section contact-section ftco-degree-bg">
+      <div class="container">
+        <div class="row d-flex mb-5 contact-info">
+          <div class="col-md-12 mb-4">
+            <h2 class="h4">Contact Information</h2>
+          </div>
+          <div class="w-100"></div>
+          <div class="col-md-3">
+            <p><span>Address:</span> 198 West 21th Street, Suite 721 New York NY 10016</p>
+          </div>
+          <div class="col-md-3">
+            <p><span>Phone:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
+          </div>
+          <div class="col-md-3">
+            <p><span>Email:</span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
+          </div>
+          <div class="col-md-3">
+            <p><span>Website</span> <a href="#">yoursite.com</a></p>
+          </div>
+        </div>
+        <div class="row block-9">
+          <div class="col-md-6 pr-md-5">
+          	<h4 class="mb-4">Do you have any questions?</h4>
+            <form action="#">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Your Name">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Your Email">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Subject">
+              </div>
+              <div class="form-group">
+                <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+              </div>
+              <div class="form-group">
+                <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
+              </div>
+            </form>
+          
+          </div>
 
-<?php
-$res = App\Stakeholders::select('s_names','emails','addresses','contact_nos','types','job_types','dobs')->where('types','volunteer')->get();
+          <div class="col-md-6" id="map"></div>
+        </div>
+      </div>
+    </section>
 
-echo "
-
-<div class='table-title' style='margin-top:15px; margin-bottom:15px;'>
-<h3 id='heading'>Volunteer's Details Table</h3>
-</div>
-<table class='table-fill' style='margin-top:15px; margin-bottom:30px;'>
-<thead>
-<tr>
-      <th class='text-left'>Name</th>
-      <th class='text-left'>Email</th>
-      <th class='text-left'>Phone</th>
-      <th class='text-left'>DOB</th>
-      <th class='text-left'>Address</th>
-      <th class='text-left'>Volunteering-Type</th>
-</tr>
-
- 
-  </thead>
-  ";
-
-for($i=0;$i<count($res);$i++){
-
-	$array1 = $res[$i];
-	$name = $array1['s_names'];
-	$email = $array1['emails'];
-	$address = $array1['addresses'];
-	$phone = $array1['contact_nos'];
-	$job = $array1['job_types'];
-	$dob = $array1['dobs'];
-
- echo "
-
- 
-  <tbody>
-    <tr>
-      <td class='text-left'><strong>$name</strong></td>
-      <td class='text-left'>$email</td>
-      <td class='text-left'>$phone</td>
-      <td class='text-left'>$dob</td>
-      <td class='text-left'>$address</td>
-      <td class='text-left'>$job</td>
-
-    </tr>
-  </tbody>
-";
-
-}
-
-
-
-
-
-
-
-
-?>
-</table>
-<footer class="ftco-footer ftco-section img">
+    <footer class="ftco-footer ftco-section img">
     	<div class="overlay"></div>
       <div class="container">
         <div class="row mb-5">
@@ -370,8 +189,14 @@ for($i=0;$i<count($res);$i++){
         </div>
       </div>
     </footer>
-</body>
-    <script src="/colrib/js/jquery.min.js"></script>
+    
+  
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+/colrib/
+  <script src="/colrib/js/jquery.min.js"></script>
   <script src="/colrib/js/jquery-migrate-3.0.1.min.js"></script>
   <script src="/colrib/js/popper.min.js"></script>
   <script src="/colrib/js/bootstrap.min.js"></script>
@@ -385,7 +210,9 @@ for($i=0;$i<count($res);$i++){
   <script src="/colrib/js/bootstrap-datepicker.js"></script>
   <script src="/colrib/js/jquery.timepicker.min.js"></script>
   <script src="/colrib/js/scrollax.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script> -->
   <script src="/colrib/js/google-map.js"></script>
   <script src="/colrib/js/main.js"></script>
+    
+  </body>
 </html>

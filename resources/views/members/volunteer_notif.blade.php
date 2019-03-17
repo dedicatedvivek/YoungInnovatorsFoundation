@@ -1,33 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	<title>Organisation Register</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="ContactFrom_v5/images/icons/favicon.ico"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="ContactFrom_v5/vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="ContactFrom_v5/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="ContactFrom_v5/fonts/iconic/css/material-design-iconic-font.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="ContactFrom_v5/vendor/animate/animate.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="ContactFrom_v5/vendor/css-hamburgers/hamburgers.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="ContactFrom_v5/vendor/animsition/css/animsition.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="ContactFrom_v5/vendor/select2/select2.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="ContactFrom_v5/vendor/daterangepicker/daterangepicker.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="ContactFrom_v5/vendor/noui/nouislider.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="ContactFrom_v5/css/util.css">
-	<link rel="stylesheet" type="text/css" href="ContactFrom_v5/css/main.css">
-<!--===============================================================================================-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+</style>
 <link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Overpass:300,400,400i,600,700" rel="stylesheet">
 
@@ -86,12 +97,11 @@
 
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+          <li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
           <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
           <li class="nav-item"><a href="/causes" class="nav-link">Causes</a></li>
-          <li class="nav-item"><a href="/newdonation" class="nav-link">Donate</a></li>
+          <li class="nav-item"><a href="/donate" class="nav-link">Donate</a></li>
           <li class="nav-item"><a href="/gallery" class="nav-link">Gallery</a></li>
-          <li class="nav-item active"><a href="/newstakeholder" class="nav-link">Register</a></li>
           <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
         </ul>
       </div>
@@ -110,59 +120,29 @@
       </div>
     </div>
 
+<h2 style="text-align:center">User Profile Card</h2>
 
-	<div class="container-contact100">
-		<div class="wrap-contact100">
-			<form class="contact100-form validate-form" method="POST" enctype="multipart/form-data" action="/insert_organization">
-				{{csrf_field()}}
-				<span class="contact100-form-title">
-					Organisation
-				</span>
-
-				<div class="wrap-input100 validate-input bg1" data-validate="Please Type Your Name">
-					<span class="label-input100"> NAME *</span>
-					<input class="input100" type="text" name="name" placeholder="Enter Organization's Name">
-				</div>
-
-				<div class="wrap-input100 validate-input bg1" data-validate="Please Type Your Registration Number">
-					<span class="label-input100"> Registration Number *</span>
-					<input class="input100" type="text" name="regnumber" placeholder="Enter Organization's Registration Number">
-				</div>
-
-				<div class="wrap-input100 bg1 rs1-wrap-input100">
-					<span class="label-input100">Phone *</span>
-					<input class="input100" type="text" name="phone" placeholder="Enter Phone Number">
-				</div>
+<div class="card">
+  <img src="http://profilepicturesdp.com/wp-content/uploads/2018/06/blank-male-profile-picture-6.jpg" alt="John" style="width:100%">
+  <h1>{{$name}}</h1>
+  <p class="title">{{$typevolunteer}}</p>
+  <p>{{$address}}</p>
+  
+  <p><button>Contact: {{$phone}} </button></p>
+</div>
+<form method="post" action="/attachment_email">
 
 
-				<div class="wrap-input100 bg1 rs1-wrap-input100">
-					<span class="label-input100">Type *</span>
-					<input class="input100" type="text" name="type" placeholder="Enter Organization's type">
-				</div>
+  {{csrf_field()}}
+  <input type="hidden" name="name" value="{{$name}}">
+  <input type="hidden" name="typevolunteer" value="{{$typevolunteer}}">
+  <input type="hidden" name="address" value="{{$address}}">
+  <input type="hidden" name="phone" value="{{$phone}}">
+  <input type="submit" name="submil" value="Submit" />
+  
+</form>
 
-
-				<div class="wrap-input100 validate-input bg0 rs1-alert-validate" data-validate = "Please Type Your Address">
-					<span class="label-input100">Address *</span>
-					<textarea class="input100" name="address" placeholder="Enter Organization's Address"></textarea>
-				</div>
-
-				<div class="wrap-input100 validate-input bg1" data-validate="Please Type Your Name">
-					<span class="label-input100"> Letter Head *</span>
-					<input type="file" name="filer" id="filer" accept="image">
-				</div>
-
-				<div class="container-contact100-form-btn">
-					<button class="contact100-form-btn">
-						<span>
-							Submit
-							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
-						</span>
-					</button>
-				</div>
-			</form>
-		</div>
-	</div>
-	<footer class="ftco-footer ftco-section img">
+<footer class="ftco-footer ftco-section img">
     	<div class="overlay"></div>
       <div class="container">
         <div class="row mb-5">
@@ -239,80 +219,7 @@
         </div>
       </div>
     </footer>
-
-
-<!--===============================================================================================-->
-	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/bootstrap/js/popper.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/select2/select2.min.js"></script>
-	<script>
-		$(".js-select2").each(function(){
-			$(this).select2({
-				minimumResultsForSearch: 20,
-				dropdownParent: $(this).next('.dropDownSelect2')
-			});
-
-
-			$(".js-select2").each(function(){
-				$(this).on('select2:close', function (e){
-					if($(this).val() == "Please chooses") {
-						$('.js-show-service').slideUp();
-					}
-					else {
-						$('.js-show-service').slideUp();
-						$('.js-show-service').slideDown();
-					}
-				});
-			});
-		})
-	</script>
-<!--===============================================================================================-->
-	<script src="vendor/daterangepicker/moment.min.js"></script>
-	<script src="vendor/daterangepicker/daterangepicker.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/countdowntime/countdowntime.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/noui/nouislider.min.js"></script>
-	<script>
-	    var filterBar = document.getElementById('filter-bar');
-
-	    noUiSlider.create(filterBar, {
-	        start: [ 1500, 3900 ],
-	        connect: true,
-	        range: {
-	            'min': 1500,
-	            'max': 7500
-	        }
-	    });
-
-	    var skipValues = [
-	    document.getElementById('value-lower'),
-	    document.getElementById('value-upper')
-	    ];
-
-	    filterBar.noUiSlider.on('update', function( values, handle ) {
-	        skipValues[handle].innerHTML = Math.round(values[handle]);
-	        $('.contact100-form-range-value input[name="from-value"]').val($('#value-lower').html());
-	        $('.contact100-form-range-value input[name="to-value"]').val($('#value-upper').html());
-	    });
-	</script>
-<!--===============================================================================================-->
-	<script src="js/main.js"></script>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-23581568-13');
-</script>
+</body>
 <script src="/colrib/js/jquery.min.js"></script>
   <script src="/colrib/js/jquery-migrate-3.0.1.min.js"></script>
   <script src="/colrib/js/popper.min.js"></script>
@@ -331,5 +238,4 @@
   <script src="/colrib/js/google-map.js"></script>
   <script src="/colrib/js/main.js"></script>
 
-</body>
 </html>
