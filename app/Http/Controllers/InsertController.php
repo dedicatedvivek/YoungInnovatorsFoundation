@@ -120,12 +120,31 @@ class InsertController extends Controller
 
     	$data_array_stake = array('s_names'=>$name,'emails' =>$email , 'addresses' =>$address, 'contact_nos' =>$phone, 'types' =>$job, 'job_types' =>$typevolunteer, 'dobs' =>$dob);
 
+        if ($job == 'volunteer') {
+            ;
+            return view('members.volunteer_notif', ['name' => $name,'email' => $email,'phone' => $phone,'dob' => $dob,'typevolunteer' => $typevolunteer,'address' => $address]);
+        }
+
     	$res = \App\Stakeholders::insert($data_array_stake);
     	if($res){
     		echo "<script> alert('Data Inserted Successfully')</script>";
     	}
 
     	return view('new_stakeholder');
+    }
+
+    function insert_donation(Request $req){
+        $d_amounts = $req->input('d_amounts');
+        $d_dates = $req->input('d_dates');
+        $d_modes= $req->input('d_modes');
+        
+        $data_array_stake = array('d_amounts'=>$d_amounts,'d_dates' =>$d_dates , 'd_modes' =>$d_modes,);
+
+        $res = \App\donations::insert($data_array_stake);
+
+        return view('causes');
+
+
     }
 
 }
