@@ -36,7 +36,7 @@ Route::get('/volunteerhome', function () {
 });
 
 Route::get('/studenthome', function () {
-    return view('students.home');
+    return view('members.student');
 });
 
 Route::get('/neworganization', function () {

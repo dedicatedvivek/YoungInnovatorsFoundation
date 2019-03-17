@@ -1,93 +1,52 @@
-
-
 <!DOCTYPE html>
 <html>
 <head>
-
-  <title></title>
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="w3css.css">
-
+	<title></title>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 <style type="text/css">
-
-.table-container{
-  width: 40%;
+	
+body{
+    background: #eee;
 }
-.headtext{
-
+span{
+    font-size:15px;
 }
-
-
-.tab
-{
-  overflow-y:scroll;
-  max-height: 20%;
-
+a{
+  text-decoration:none; 
+  color: #0062cc;
+  /* border-bottom:2px solid #0062cc; */
 }
-
-
-
-#two{
-  display: none;
+.heading{
+	text-align: center;
 }
 
-
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+.box{
+    padding:60px 0px;
 }
 
-/* Modal Content */
-.modal-content {
-  background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
+.abc{
+	color: black;
+}
+.box-part{
+    background:#FFF;
+    border-radius:0;
+    padding:60px 10px;
+    margin:30px 0px;
+}
+.text{
+    margin:20px 0px;
 }
 
-/* The Close Button */
-.close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+.fa{
+     color:#4183D7;
 }
 
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-
-
-
-table tr th{
-  border:2px solid black;
-  color: white;
-}
-table tr td{
-  border:2px dotted black;
-}
-
-}
-
-  </style>
-  <link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,700" rel="stylesheet">
+</style>
+<link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Overpass:300,400,400i,600,700" rel="stylesheet">
 
     <link rel="stylesheet" href="/colrib/css/open-iconic-bootstrap.min.css">
@@ -145,10 +104,10 @@ table tr td{
 
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active"><a href="/memberhome" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="/memberhome" class="nav-link">Home</a></li>
           <li class="nav-item"><a href="/members/add" class="nav-link">Add Member</a></li>
-          <li class="nav-item"><a href="/members/assign" class="nav-link">Assign Members</a></li>
-          <li class="nav-item"><a href="/members/assign" class="nav-link">Student Attendance</a></li>
+					<li class="nav-item"><a href="/members/assign" class="nav-link">Assign Members</a></li>
+					<li class="nav-item active"><a href="/studenthome" class="nav-link">Student Attendance</a></li>
         </ul>
       </div>
     </div>
@@ -159,177 +118,113 @@ table tr td{
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
           <div class="col-md-7 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
-             <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="/">Home</a></span> <span>Members</span></p>
-            <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Members</h1>
+             <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="/">Home</a></span> <span>Student Attendance</span></p>
+            <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Student Attendance</h1>
           </div>
         </div>
       </div>
     </div>
-<?php
+<br>
+<br>
+<br>
+<br>
+<br>
+		<?php
+echo"<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+<h2 class='heading'>STUDENT DETAILS<h2>
+<div class='box'>
+    <div class='container'>
+     	<div class='row'>
 
-  
-$volunteer_query= App\Stakeholders::select('s_names','s_ids','emails','addresses','contact_nos','job_types','dobs')->where('types','volunteer')->get();
+			 ";
 
-$count_volunteer = count($volunteer_query);
+$res = App\Students::select('st_ids','st_names','addresses','st_emails','dobs')->get();
 
 
-  ?>
-  
-<div class="table-container" id="three">
-<h2><i> Our Volunteers </i> </h2>
+
+
+for($i=0;$i<count($res);$i++){
+
+	$array1 = $res[$i];
+	$name = $array1['st_names'];
+	$email = $array1['st_emails'];
+	$address = $array1['addresses'];
+	$id = $array1['st_ids'];
+	$dob = $array1['dobs'];
+
+
+$res1 = App\StudentAttendances::select('st_dates','st_attendeds','st_leavenotes','st_ids')->where('st_ids',$id)->get();
+    
+	$array3 = $res1[0];
+	$date = $array3['st_dates'];
+	$attendeds = $array3['st_attendeds'];
+	$stid = $array3['st_ids'];
+
+
+
+
  
-    
-<div class="tab">
-      <table id="table1" class="w3-table-all" id="org-disp-table">
-        <thead>
-          <tr class="w3-grey">
-        <th> Sr No </th>
-        <th>Registeration Number</th>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Address</th>
-        <th>Contact Number</th>
-        <th>Date Of Birth</th>
-        <th>Attendance</th>
-      </tr>
-      </thead>
-    
-    <!-- Row 1 - fadeIn -->
-<tr>
-      <?php
-      $id_arr  = array();
-        for ($i=0; $i <$count_volunteer ; $i++) { 
-          echo "<section class='row-fadeIn-wrapper'>";
-          echo "<article class='row fadeIn nfl' >";
-          echo "<ul style='height:100%;'>";
-          $list3 = $volunteer_query[$i];
-          $s_names3 = $list3['s_names'];
-          $emails3 = $list3['emails'];
-          $v_id3 = $list3['s_ids'];
-          $addresses3 = $list3['addresses'];
-          $job_types3 = $list3['job_types'];
-          $contact_nos3 = $list3['contact_nos'];
-          $dobs3 = $list3['dobs'];
-
-          array_push($id_arr, $v_id3);
 
 
-          echo "<td>";
-          echo $v_id3;
-          echo "</td>";
+	
 
-          echo "<td>";
-          echo $s_names3;
-          echo "</td>";
+echo "			
+			 
+			    <div class='col-lg-4 col-md-4 col-sm-4 col-xs-12'>
 
+               
+					<div class='box-part text-center'>
+                        <img src='avatar.jpg' class='fa fa-instagram fa-3x' alt=Avatar'>
+                        
+                        
+						<div class='title'>
+							<h4>$id</h4>
+							<h4>$name</h4>
+							<h4>$dob</h4>
+							<h4>$email</h4>
+						</div>
+                        
+						<div class='text'>
+							<span>$address</span>
+						</div>
+                        
+						<button type='button' class='btn btn-secondary' data-toggle='modal' data-target='#exampleModalCenter'>Show Attendance</button>
 
-          echo "<td>";
-          echo $emails3;
-          echo "</td>";
-
-
-          echo "<td>";
-          echo $addresses3;
-          echo "</td>";
-
-          echo "<td>";
-          echo $job_types3;
-          echo "</td>";
-
-          
+						<div class='modal fade' id='exampleModalCenter' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true'>
+						  <div class='modal-dialog modal-dialog-centered' role='document'>
+						    <div class='modal-content'>
+						      <div class='modal-header'>
+						        <h5 class='modal-title' id='exampleModalLongTitle'>Attendance</h5>
+						        <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+						          <span aria-hidden='true'>&times;</span>
+						        </button>
+						      </div>
+						      <div class='modal-body'>
+						      Percentage = 69.8%
+						      Dates attended -> $date
+						      </div>
+						      <div class='modal-footer'>
+						        <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
+						  						      </div>
+						    </div>
+						  </div>
+						</div>
 
 
 
 
-          echo "<td>";
-          echo $contact_nos3;
-          echo "</td>";
+                        
+					 </div>
+				</div>	" ;
 
-
-
-
-
-          echo "<td>";
-          echo $dobs3;
-          echo "</td>";
-        
-         
-
-         echo "<td>";
-         echo "<button id='$v_id3' value = 'Insert Attendance'>Insert Attendace</button>";
-                 
-                  echo "</td>";
-      
-
-
-        echo"<td>";
-        echo"<a href = '#'>Text Here</a>";
-
-          echo "</tr>";
-          
-
-         
 }
-         
-?>
-   
 
+ ?>
 
-</table>
-</div>
-</div>
-
-<div id="myModal" class="modal">
-
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <div class="container-contact100">
-    <div class="wrap-contact100">
-      <form class="contact100-form validate-form" action="/volunteers/add_attendance" method="POST">
-                {{csrf_field()}}
-        <span class="contact100-form-title">
-          volunteer's Attendance Page
-        </span>
-
-         <div class="wrap-input100 validate-input bg1" data-validate="Please Select The Date">
-          <span class="label-input100">Student ID</span>
-          <input  id="idi" class="input100" type="number" name="name" placeholder="Select The Date" disabled/>
-        </div>
-
-        <div class="wrap-input100 validate-input bg1" data-validate="Please Select The Date">
-          <span class="label-input100">v_a_dates *</span>
-          <input id="date" class="input100" type="date" name="name" placeholder="Select The Date">
-        </div>
-
-        
-
-        <div class="wrap-input100 bg1 rs1-wrap-input100">
-          <span class="label-input100">Status *</span>
-          <input id="v_attendeds" class="input100" type="text" name="v_attendeds" placeholder="Enter 1 or o ">
-        </div>
-
-
-        <div class="wrap-input100 bg1 rs1-wrap-input100">
-          <span class="label-input100">leavenotes*</span>
-          Select a file: <input type="file" name="myFile"><br><br>
-          
-        </div>
-
-        
-        <div class="container-contact100-form-btn">
-          <button class="contact100-form-btn">
-            <span>
-              Submit
-              <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
-            </span>
-          </button>
-        </div>
-      </form>
+		</div>		
     </div>
-  </div>
-    
-  </div>
-  <footer class="ftco-footer ftco-section img">
+ </div>
+ <footer class="ftco-footer ftco-section img">
     	<div class="overlay"></div>
       <div class="container">
         <div class="row mb-5">
@@ -406,60 +301,6 @@ $count_volunteer = count($volunteer_query);
         </div>
       </div>
     </footer>
-
-</div>
-
-<script type="text/javascript">
-  let table= document.getElementById('table1'), iIndex;
-  for(let i=0; i<table.rows.length; i++){
-    table.rows[i].onclick= function(){
-      rIndex=this.rowIndex;
-      document.getElementById('idi').value=this.cells[0].innerHTML;
-     
-     
-
-    }
-  }
-</script>
-
-<script>
-// Get the modal
-    var id = <?php echo json_encode($id_arr); ?>;
-    var count_id = id.length;
-var modal = document.getElementById('myModal');
-var btns = [];
-for (var i = id[0]; i > count_id; i++) {
-
-
-btns[i]= document.getElementById(id[i])
-}
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
-for (var i = id[0]; i > count_id; i++) {
-btns[i].onclick = function() {
-  modal.style.display = "block";
-}
-}
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-</script>
-
-      
-        
-        
-          
 </body>
 <script src="/colrib/js/jquery.min.js"></script>
   <script src="/colrib/js/jquery-migrate-3.0.1.min.js"></script>

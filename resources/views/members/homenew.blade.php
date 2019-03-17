@@ -214,6 +214,7 @@ body,html{
           <li class="nav-item active"><a href="/memberhome" class="nav-link">Home</a></li>
           <li class="nav-item"><a href="/members/add" class="nav-link">Add Member</a></li>
           <li class="nav-item"><a href="/members/assign" class="nav-link">Assign Members</a></li>
+          <li class="nav-item"><a href="/studenthome" class="nav-link">Student Attendance</a></li>
         </ul>
       </div>
     </div>
