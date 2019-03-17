@@ -10,6 +10,19 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+ Route::get('/login/members', 'Auth\LoginController@showMembersLoginForm');
+    Route::get('/login/volunteers', 'Auth\LoginController@showVolunteersLoginForm');
+     Route::get('/register/members', 'Auth\RegisterController@showMembersRegisterForm');
+    Route::get('/register/volunteers', 'Auth\RegisterController@showVolunteersRegisterForm');
+
+    Route::post('/login/members', 'Auth\LoginController@membersLogin');
+    Route::post('/login/writer', 'Auth\LoginController@volunteersLogin');
+    Route::post('/register/members', 'Auth\RegisterController@createMembers');
+    Route::post('/register/writer', 'Auth\RegisterController@createVolunteers');
+
+    Route::view('/home', 'home')->middleware('auth');
+    Route::view('/members', 'members.homenew');
+    Route::view('/volunteers', 'volunteers.home');
 
 Route::get('/newstakeholder', function () {
     return view('new_stakeholder');
@@ -110,3 +123,6 @@ Route::get('/contact', function () {
 Route::get('/ocr', function () {
     return view('mail');
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

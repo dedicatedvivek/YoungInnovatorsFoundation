@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
+use Illuminate\Http\Request;
+    use Auth;
+
 class LoginController extends Controller
 {
     /*
@@ -35,5 +38,44 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+        $this->middleware('guest:members')->except('logout');
+            $this->middleware('guest:volunteers')->except('logout');
+    }
+
+     public function showMembersLoginForm()
+    {
+        return view('auth.login', ['url' => 'members']);
+    }
+    public function membersLogin(Request $request)
+    {
+        $this->validate($request, [
+            'email'   => 'required|email',
+            'password' => 'required|min:6'
+        ]);
+
+        if (Auth::guard('members')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
+
+            return redirect()->intended('/members');
+        }
+        return back()->withInput($request->only('email', 'remember'));
+    }
+
+     public function showVolunteersLoginForm()
+    {
+        return view('auth.login', ['url' => 'volunteers']);
+    }
+
+    public function VolunteersLogin(Request $request)
+    {
+        $this->validate($request, [
+            'email'   => 'required|email',
+            'password' => 'required|min:6'
+        ]);
+
+        if (Auth::guard('volunteers')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
+
+            return redirect()->intended('/volunteers');
+        }
+        return back()->withInput($request->only('email', 'remember'));
     }
 }
