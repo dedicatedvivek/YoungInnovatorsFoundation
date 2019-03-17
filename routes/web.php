@@ -37,7 +37,6 @@ Route::get('/volunteerhome', function () {
 
 Route::get('/neworganization', function () {
     return view('new_organization');
-
 });
 
 
