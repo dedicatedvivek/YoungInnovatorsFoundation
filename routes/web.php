@@ -44,6 +44,13 @@ Route::post('/members/assign', "InsertController@insert_ovrelations");
 Route::get('/members/add', function(){
     return view('members.addmember');
 });
+Route::get('membersattendance', function(){
+    return view('members.attendance');
+});
+
+Route::post('/members/add_attendance', "InsertController@insert_Attendances");
+
+Route::post('/volunteers/add_attendance', "InsertController@insert_vol_Attendances");
 
 Route::get('/members/fetch_ovrelations', "InsertController@fetch_ovrelations");
 
