@@ -41,7 +41,7 @@
           <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
           <li class="nav-item active"><a href="/about" class="nav-link">About</a></li>
           <li class="nav-item"><a href="/causes" class="nav-link">Causes</a></li>
-          <li class="nav-item"><a href="/donate" class="nav-link">Donate</a></li>
+          <li class="nav-item"><a href="/newdonation" class="nav-link">Donate</a></li>
           <li class="nav-item"><a href="/gallery" class="nav-link">Gallery</a></li>
           <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
         </ul>
@@ -95,7 +95,7 @@
               <div class="text">
               	<h3 class="mb-4">Donate Money</h3>
               	<p>Even the all-powerful Pointing has no control about the blind texts.</p>
-              	<p><a href="#" class="btn btn-white px-3 py-2 mt-2">Donate Now</a></p>
+              	<p><a href="/newdonation" class="btn btn-white px-3 py-2 mt-2">Donate Now</a></p>
               </div>
             </div>
           </div>
@@ -222,18 +222,7 @@
               </ul>
             </div>
           </div>
-          <div class="col-md-3">
-            <div class="ftco-footer-widget mb-4">
-            	<h2 class="ftco-heading-2">Have a Questions?</h2>
-            	<div class="block-23 mb-3">
-	              <ul>
-	                <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
-	              </ul>
-	            </div>
-            </div>
-          </div>
+          
         </div>
         <div class="row">
           <div class="col-md-12 text-center">

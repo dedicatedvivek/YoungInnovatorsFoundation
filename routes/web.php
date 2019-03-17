@@ -16,13 +16,13 @@ Route::get('/newstakeholder', function () {
 });
 
 
-Route::get('/causes', function () {
+Route::get('/donorcauses', function () {
     return view('doners.causes');
 });
 Route::get('/donation', function () {
     return view('doners.donation');
 });
-Route::get('/new_donation', function () {
+Route::get('/newdonation', function () {
     return view('doners.new_donation');
 });
 

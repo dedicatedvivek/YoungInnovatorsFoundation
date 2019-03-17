@@ -40,11 +40,11 @@
         <ul class="navbar-nav ml-auto">
           <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
           <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
-          <li class="nav-item active"><a href="causes.html" class="nav-link">Causes</a></li>
-          <li class="nav-item"><a href="donate.html" class="nav-link">Donate</a></li>
-          <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
-          <li class="nav-item"><a href="event.html" class="nav-link">Events</a></li>
-          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+          <li class="nav-item active"><a href="/causes" class="nav-link">Causes</a></li>
+          <li class="nav-item"><a href="/newdonationl" class="nav-link">Donate</a></li>
+          <li class="nav-item"><a href="/gallery" class="nav-link">Gallery</a></li>
+          <li class="nav-item"><a href="/event" class="nav-link">Events</a></li>
+          <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
         </ul>
       </div>
     </div>
