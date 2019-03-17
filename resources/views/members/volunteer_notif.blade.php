@@ -46,17 +46,20 @@ button:hover, a:hover {
 
 <div class="card">
   <img src="http://profilepicturesdp.com/wp-content/uploads/2018/06/blank-male-profile-picture-6.jpg" alt="John" style="width:100%">
-  <h1>Hari</h1>
-  <p class="title">Teaching Staff</p>
-  <p>Mumbai</p>
+  <h1>{{$name}}</h1>
+  <p class="title">{{$typevolunteer}}</p>
+  <p>{{$address}}</p>
   
-  <p><button>Contact: </button></p>
+  <p><button>Contact: {{$phone}} </button></p>
 </div>
 <form method="post" action="/attachment_email">
 
 
   {{csrf_field()}}
-  
+  <input type="hidden" name="name" value="{{$name}}">
+  <input type="hidden" name="typevolunteer" value="{{$typevolunteer}}">
+  <input type="hidden" name="address" value="{{$address}}">
+  <input type="hidden" name="phone" value="{{$phone}}">
   <input type="submit" name="submil" value="Submit" />
   
 </form>
