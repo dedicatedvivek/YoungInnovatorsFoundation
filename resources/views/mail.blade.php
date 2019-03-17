@@ -1,1 +1,5 @@
-this ia a test hey
+<?php
+    use thiagoalessio\TesseractOCR\TesseractOCR;
+    echo (new TesseractOCR('/german.png'))
+        ->run();
+?>

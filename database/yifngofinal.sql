@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.1
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 17, 2019 at 06:28 AM
--- Server version: 10.1.33-MariaDB
--- PHP Version: 7.2.6
+-- Generation Time: Mar 17, 2019 at 06:49 AM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 7.3.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -127,6 +127,24 @@ CREATE TABLE `organizations` (
   `o_addresses` varchar(100) NOT NULL,
   `contact_nos` bigint(10) NOT NULL,
   `file_names` varchar(100) NOT NULL,
+  `v_ids` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `organizations`
+--
+
+INSERT INTO `organizations` (`registration_numbers`, `o_names`, `o_types`, `o_addresses`, `contact_nos`, `file_names`, `v_ids`) VALUES
+('789', 'SIES', 'College', 'Nerul', 7894561230, 'photo.xlx', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ovrelations`
+--
+
+CREATE TABLE `ovrelations` (
+  `o_ids` varchar(20) NOT NULL,
   `v_ids` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -313,6 +331,13 @@ ALTER TABLE `organizations`
   ADD KEY `v_ids` (`v_ids`);
 
 --
+-- Indexes for table `ovrelations`
+--
+ALTER TABLE `ovrelations`
+  ADD KEY `o_ids` (`o_ids`),
+  ADD KEY `v_ids` (`v_ids`);
+
+--
 -- Indexes for table `password_resets`
 --
 ALTER TABLE `password_resets`
@@ -430,6 +455,13 @@ ALTER TABLE `donations`
 --
 ALTER TABLE `organizations`
   ADD CONSTRAINT `organizations_ibfk_1` FOREIGN KEY (`v_ids`) REFERENCES `stakeholders` (`s_ids`);
+
+--
+-- Constraints for table `ovrelations`
+--
+ALTER TABLE `ovrelations`
+  ADD CONSTRAINT `ovrelations_ibfk_1` FOREIGN KEY (`o_ids`) REFERENCES `organizations` (`registration_numbers`),
+  ADD CONSTRAINT `ovrelations_ibfk_2` FOREIGN KEY (`v_ids`) REFERENCES `stakeholders` (`s_ids`);
 
 --
 -- Constraints for table `student_attendances`
