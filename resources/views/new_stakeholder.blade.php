@@ -126,7 +126,7 @@
 					<span class="label-input100">TYPE *</span>
 					<div>
 						<select class="js-select2" name="job">
-							<option>Please chooses</option>
+							<option>Please choose</option>
 							<option value="donor">DONOR</option>
 							<option value="volunteer">VOLUNTEER</option>
 						</select>

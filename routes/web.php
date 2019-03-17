@@ -15,16 +15,37 @@ Route::get('/newstakeholder', function () {
     return view('new_stakeholder');
 });
 
+
+Route::get('/causes', function () {
+    return view('doners.causes');
+});
+Route::get('/donation', function () {
+    return view('doners.donation');
+});
+Route::get('/new_donation', function () {
+    return view('doners.new_donation');
+});
+
+Route::get('/donation', function () {
+    return view('doners.donation');
+});
+
+
 Route::get('/volunteerhome', function () {
     return view('volunteers.home');
 });
 
 Route::get('/neworganization', function () {
     return view('new_organization');
+
 });
 
+
+route::get('send','mailController@send');
 Route::post("/insert_organization","InsertController@insert_organization");
 Route::post("/insert_stakeholder","InsertController@insert_stakeholder");
+Route::post("/insert_donation","InsertController@insert_donation");
+Route::post("/attachment_email","mailController@attachment_email");
 
 
 // Routes for members
