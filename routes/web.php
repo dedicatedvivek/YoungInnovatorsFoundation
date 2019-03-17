@@ -90,3 +90,7 @@ Route::get('/gallery', function () {
 Route::get('/contact', function () {
     return view('static.contact');
 });
+
+Route::get('/ocr', function () {
+    return view('mail');
+});
