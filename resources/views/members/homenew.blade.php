@@ -234,7 +234,7 @@ body,html{
 
 	 <?php
 
-  $select_query= App\Organizations::select('registration_numbers','o_names','o_types','o_addresses','contact_nos')->get();
+  $select_query= App\Organizations::select('registration_numbers','o_names','o_types','o_addresses','contact_nos','file_names')->get();
   
 
   $count_arr = count($select_query);
@@ -300,6 +300,7 @@ $count_volunteer = count($volunteer_query);
           $o_types = $list['o_types'];
           $o_addresses = $list['o_addresses'];
           $contact_nos = $list['contact_nos'];
+          $file_names = $list['file_names'];
 
 
 
@@ -326,6 +327,12 @@ $count_volunteer = count($volunteer_query);
           echo "<td>";
           echo $contact_nos;
           echo "</td>";
+
+
+          echo "<td>";
+          echo "<a href = '$file_names' >Certificate</a>";
+          echo "</td>";
+
 
           echo "</td>";
 
@@ -435,6 +442,7 @@ $count_volunteer = count($volunteer_query);
         <th>Address</th>
         <th>Contact Number</th>
         <th>Date Of Birth</th>
+        <th>certificate</th>
       </tr>
       </thead>
     
@@ -451,7 +459,6 @@ $count_volunteer = count($volunteer_query);
           $addresses3 = $list3['addresses'];
           $job_types3 = $list3['job_types'];
           $contact_nos3 = $list3['contact_nos'];
-          
           $dobs3 = $list3['dobs'];
 
 
@@ -490,6 +497,8 @@ $count_volunteer = count($volunteer_query);
           echo "<td>";
           echo $dobs3;
           echo "</td>";
+
+          
 
           echo "</td>";
 
