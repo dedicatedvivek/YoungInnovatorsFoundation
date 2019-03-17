@@ -11,14 +11,14 @@
 |
 */
  Route::get('/login/members', 'Auth\LoginController@showMembersLoginForm');
-    Route::get('/login/volunteers', 'Auth\LoginController@showVolunteersLoginForm');
+    Route::post('/login/volunteers', 'Auth\LoginController@showVolunteersLoginForm');
      Route::get('/register/members', 'Auth\RegisterController@showMembersRegisterForm');
-    Route::get('/register/volunteers', 'Auth\RegisterController@showVolunteersRegisterForm');
+    Route::post('/register/volunteers', 'Auth\RegisterController@showVolunteersRegisterForm');
 
     Route::post('/login/members', 'Auth\LoginController@membersLogin');
-    Route::post('/login/writer', 'Auth\LoginController@volunteersLogin');
+    Route::post('/login/volunteers', 'Auth\LoginController@volunteersLogin');
     Route::post('/register/members', 'Auth\RegisterController@createMembers');
-    Route::post('/register/writer', 'Auth\RegisterController@createVolunteers');
+    Route::post('/register/volunteers', 'Auth\RegisterController@createVolunteers');
 
     Route::view('/home', 'home')->middleware('auth');
     Route::view('/members', 'members.homenew');
@@ -97,6 +97,7 @@ Route::get('/members/fetch_ovrelations', "InsertController@fetch_ovrelations");
 /* =========================================== 
     Static Routes
 ==============================================*/
+Route::middleware(['auth'])->group(function (){
 Route::get('/', function () {
     return view('static.index');
 });
@@ -116,7 +117,7 @@ Route::get('/causes', function () {
 Route::get('/gallery', function () {
     return view('static.gallery');
 });
-
+});
 Route::get('/contact', function () {
     return view('static.contact');
 });
