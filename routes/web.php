@@ -11,13 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
+
+
 
 Route::get('/newstakeholder', function () {
     return view('new_stakeholder');
 });
+
 
 Route::get('/causes', function () {
     return view('doners.causes');
@@ -34,6 +36,10 @@ Route::get('/donation', function () {
 });
 
 
+Route::get('/volunteerhome', function () {
+    return view('volunteers.home');
+});
+
 Route::get('/neworganization', function () {
     return view('new_organization');
 
@@ -48,7 +54,20 @@ Route::post("/attachment_email","mailController@attachment_email");
 
 
 // Routes for members
-Route::get('/membersassign', function(){
-    return view('members.assign');
+
+Route::get('/memberhome', function () {
+    return view('members.homenew');
 });
 
+Route::get('/members/assign', "InsertController@select_ovrelations");
+Route::post('/members/assign', "InsertController@insert_ovrelations");
+
+Route::get('/members/add', function(){
+    return view('members.addmember');
+});
+
+Route::get('/members/fetch_ovrelations', "InsertController@fetch_ovrelations");
+
+Route::post('/members/add', "InsertController@insert_member");
+
+// members routes end

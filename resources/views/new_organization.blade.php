@@ -34,7 +34,7 @@
 
 	<div class="container-contact100">
 		<div class="wrap-contact100">
-			<form class="contact100-form validate-form" method="POST" action="/insert_organization">
+			<form class="contact100-form validate-form" method="POST" enctype="multipart/form-data" action="/insert_organization">
 				{{csrf_field()}}
 				<span class="contact100-form-title">
 					Organisation
@@ -69,7 +69,7 @@
 
 				<div class="wrap-input100 validate-input bg1" data-validate="Please Type Your Name">
 					<span class="label-input100"> Letter Head *</span>
-					<input type="file" name="letter" id="fileToUpload">
+					<input type="file" name="filer" id="filer" accept="image">
 				</div>
 
 				<div class="container-contact100-form-btn">

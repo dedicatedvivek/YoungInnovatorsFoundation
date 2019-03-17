@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 16, 2019 at 02:10 PM
+-- Generation Time: Mar 16, 2019 at 09:53 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.0
 
@@ -80,8 +80,39 @@ CREATE TABLE `organizations` (
   `o_addresses` varchar(100) NOT NULL,
   `contact_nos` bigint(10) NOT NULL,
   `file_names` varchar(100) NOT NULL,
+  `v_ids` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `organizations`
+--
+
+INSERT INTO `organizations` (`registration_numbers`, `o_names`, `o_types`, `o_addresses`, `contact_nos`, `file_names`, `v_ids`) VALUES
+('123', 'kkm', 'mkmkm', 'mkmk', 7894561230, 'bbj', 12),
+('789456', 'jgj', 'jgjgjg', 'jgjjgjg', 7894561230, 'fghgfgf', 12);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ovrelations`
+--
+
+CREATE TABLE `ovrelations` (
+  `o_ids` varchar(20) NOT NULL,
   `v_ids` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `ovrelations`
+--
+
+INSERT INTO `ovrelations` (`o_ids`, `v_ids`) VALUES
+('789456', 12),
+('789456', 12),
+('123', 12),
+('789456', 13),
+('789456', 12),
+('789456', 12);
 
 -- --------------------------------------------------------
 
@@ -96,7 +127,7 @@ CREATE TABLE `stakeholders` (
   `addresses` varchar(100) NOT NULL,
   `contact_nos` bigint(250) NOT NULL,
   `types` varchar(20) DEFAULT NULL,
-  `job_types` varchar(20) NOT NULL,
+  `job_types` varchar(20) DEFAULT NULL,
   `dobs` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -105,7 +136,19 @@ CREATE TABLE `stakeholders` (
 --
 
 INSERT INTO `stakeholders` (`s_ids`, `s_names`, `emails`, `addresses`, `contact_nos`, `types`, `job_types`, `dobs`) VALUES
-(1, 'abcdefg', 'mdwvmk', 'mvkdlmk', 123456789, 'donors', 'nvdn', '2019-03-06');
+(1, 'abcdefg', 'mdwvmk', 'mvkdlmk', 123456789, 'donors', 'nvdn', '2019-03-06'),
+(2, 'ewm', 'e', 'mnjnjk', 7894561230, 'member', NULL, '2018-02-14'),
+(3, 'ewm', 'e', 'mnjnjk', 7894561230, 'member', NULL, '2018-02-14'),
+(4, 'dgnbkdnkNBDNK', 'DNBDJN', 'ngreknbk', 7894561230, 'member', NULL, '2018-02-15'),
+(5, 'knk', 'dv', 'mkn', 7894561230, 'member', NULL, '2018-02-14'),
+(6, 'nwklv', 'v', 'snbkwnj', 7894561230, 'member', NULL, '2018-02-14'),
+(7, 'mdfn', 'nsdn', 'dbkjb', 7894561230, 'member', NULL, '2018-02-15'),
+(8, 'ewm', 'e', 'mnjnjk', 7894561230, 'member', NULL, '2018-02-14'),
+(9, 'vn', 'vn', 'nekvnwj', 7894561230, 'member', NULL, '2018-02-15'),
+(10, 'awds', 'dsa', 'jasdnikjfsb', 12312, 'member', NULL, '2019-02-17'),
+(11, 'SDA', 'SADS', 'ASDASD', 231, 'member', NULL, '2019-03-05'),
+(12, 'fhd', 'hhkhk', 'hkkh', 7894561230, 'volunteer', 'fufj', '2019-03-19'),
+(13, 'bjhbh', 'bjbjbjb', 'bjbj', 7894561230, 'volunteer', '7', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -207,6 +250,13 @@ ALTER TABLE `organizations`
   ADD KEY `v_ids` (`v_ids`);
 
 --
+-- Indexes for table `ovrelations`
+--
+ALTER TABLE `ovrelations`
+  ADD KEY `o_ids` (`o_ids`),
+  ADD KEY `v_ids` (`v_ids`);
+
+--
 -- Indexes for table `stakeholders`
 --
 ALTER TABLE `stakeholders`
@@ -245,7 +295,7 @@ ALTER TABLE `donations`
 -- AUTO_INCREMENT for table `stakeholders`
 --
 ALTER TABLE `stakeholders`
-  MODIFY `s_ids` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `s_ids` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `students`
@@ -280,6 +330,13 @@ ALTER TABLE `donations`
 --
 ALTER TABLE `organizations`
   ADD CONSTRAINT `organizations_ibfk_1` FOREIGN KEY (`v_ids`) REFERENCES `stakeholders` (`s_ids`);
+
+--
+-- Constraints for table `ovrelations`
+--
+ALTER TABLE `ovrelations`
+  ADD CONSTRAINT `ovrelations_ibfk_1` FOREIGN KEY (`o_ids`) REFERENCES `organizations` (`registration_numbers`),
+  ADD CONSTRAINT `ovrelations_ibfk_2` FOREIGN KEY (`v_ids`) REFERENCES `stakeholders` (`s_ids`);
 
 --
 -- Constraints for table `student_attendances`
