@@ -55,7 +55,32 @@
     <link rel="stylesheet" href="/colrib/css/flaticon.css">
     <link rel="stylesheet" href="/colrib/css/icomoon.css">
     <link rel="stylesheet" href="/colrib/css/style.css">
-
+		<style>
+      a,.contact100-form-title{
+        font-family: 'Calibri';
+      }
+      .container-contact100{
+        background-color:#fff;
+      }
+      .wrap-contact100{
+        background-color: #fff;
+        color:grey;
+        border:solid 2px;
+        border-color: #f77c41;
+      }
+      .contact100-form-btn{
+        background-color: #fff;
+        color: #f77c41;
+        border-radius:0px;
+      }
+      .contact100-form-btn:hover{
+        background-color: #000;
+        color: #fff;
+      }
+      .label-input100{
+        color: #f77c41;
+      }
+    </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
@@ -67,11 +92,12 @@
 
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
           <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
           <li class="nav-item"><a href="/causes" class="nav-link">Causes</a></li>
           <li class="nav-item"><a href="/newdonation" class="nav-link">Donate</a></li>
           <li class="nav-item"><a href="/gallery" class="nav-link">Gallery</a></li>
+          <li class="nav-item active"><a href="/newstakeholder" class="nav-link">Register</a></li>
           <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
         </ul>
       </div>
@@ -167,10 +193,17 @@
 						</span>
 					</button>
 				</div>
-			</form>
+      </form>
+      <div class="container-contact100-form-btn col-md-6 col-sm-12">
+        <a href="/neworganization" class="contact100-form-btn">
+          <span>
+            Register as an Organization
+            <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+          </span>
+        </a>
+      </div>
 		</div>
 	</div>
-
 
 	<footer class="ftco-footer ftco-section img">
     	<div class="overlay"></div>

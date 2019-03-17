@@ -55,7 +55,32 @@
     <link rel="stylesheet" href="/colrib/css/flaticon.css">
     <link rel="stylesheet" href="/colrib/css/icomoon.css">
     <link rel="stylesheet" href="/colrib/css/style.css">
-
+    <style>
+      a,.contact100-form-title{
+        font-family: 'Calibri';
+      }
+      .container-contact100{
+        background-color:#fff;
+      }
+      .wrap-contact100{
+        background-color: #fff;
+        color:grey;
+        border:solid 2px;
+        border-color: #f77c41;
+      }
+      .contact100-form-btn{
+        background-color: #fff;
+        color: #f77c41;
+        border-radius:0px;
+      }
+      .contact100-form-btn:hover{
+        background-color: #000;
+        color: #fff;
+      }
+      .label-input100{
+        color: #f77c41;
+      }
+    </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
@@ -66,13 +91,10 @@
       </button>
 
       <div class="collapse navbar-collapse" id="ftco-nav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
-          <li class="nav-item"><a href="/causes" class="nav-link">Causes</a></li>
-          <li class="nav-item"><a href="/newdonation" class="nav-link">Donate</a></li>
-          <li class="nav-item"><a href="/gallery" class="nav-link">Gallery</a></li>
-          <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
+      <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a href="/donorcauses" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="/donation" class="nav-link">Donors</a></li>
+          <li class="nav-item active"><a href="/newdonation" class="nav-link">Donate</a></li>
         </ul>
       </div>
     </div>
@@ -83,8 +105,8 @@
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
           <div class="col-md-7 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
-             <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="/">Home</a></span> <span>Home</span></p>
-            <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Home</h1>
+             <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="/">Home</a></span> <span>Donate</span></p>
+            <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Donate</h1>
           </div>
         </div>
       </div>

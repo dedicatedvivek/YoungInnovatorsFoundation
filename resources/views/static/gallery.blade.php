@@ -43,6 +43,7 @@
           <li class="nav-item"><a href="/causes" class="nav-link">Causes</a></li>
           <li class="nav-item"><a href="/newdonation" class="nav-link">Donate</a></li>
           <li class="nav-item active"><a href="/gallery" class="nav-link">Gallery</a></li>
+          <li class="nav-item"><a href="/newstakeholder" class="nav-link">Register</a></li>
           <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
         </ul>
       </div>
